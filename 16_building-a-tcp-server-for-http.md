@@ -96,3 +96,16 @@ io.WriteString(conn, body) 					// body, aka, payload
 ```Go
 func Fields(s string) []string
 ```
+```Go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Printf("Fields are: %q", strings.Fields("  foo bar  baz   "))
+}
+
+```
