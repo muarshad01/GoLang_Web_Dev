@@ -9,8 +9,6 @@ type Handler interface {
 }
 ```
 
--- Note: Any other type which has ServeHTTP(ResponseWriter, *Request) method is also of type Handler. So, we have at lest two types, a primary type ...implementing "implicitly" an an interface...so, a secondly type.  
-
 ``` Go
 package main
 
@@ -30,6 +28,9 @@ func main() {
 	http.ListenAndServe(":8080", d)
 }
 ```
+
+-- Note: Any other type which has ServeHTTP(ResponseWriter, *Request) method is also of type Handler. So, we have at lest two types, a primary type ...implementing "implicitly" an an interface...so, a secondary type. Therefore, type hotdog is also of type handler.
+
 ***
 
 # Server
