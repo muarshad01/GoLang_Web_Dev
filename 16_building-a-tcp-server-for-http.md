@@ -1,6 +1,6 @@
 # Writing a response
 
-[type Writer](https://pkg.go.dev/io#Writer)
+[io.Writer](https://pkg.go.dev/io#Writer)
 ```Go
 type Writer interface {
 	Write(p []byte) (n int, err error)
