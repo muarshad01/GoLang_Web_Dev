@@ -10,6 +10,22 @@ type Writer interface {
 ```Go
 func WriteString(w Writer, s string) (n int, err error)
 ```
+```Go
+package main
+
+import (
+	"io"
+	"log"
+	"os"
+)
+
+func main() {
+	if _, err := io.WriteString(os.Stdout, "Hello World"); err != nil {
+		log.Fatal(err)
+	}
+
+}
+```
 [fmt.Fprintf](https://pkg.go.dev/fmt#Fprintf)
 ```Go
 func Fprintf(w io.Writer, format string, a ...any) (n int, err error)
