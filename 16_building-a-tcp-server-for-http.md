@@ -1,5 +1,11 @@
 # Writing a response
 
+[type Writer](https://pkg.go.dev/io#Writer)
+```Go
+type Writer interface {
+	Write(p []byte) (n int, err error)
+}
+```
 [io.WriteSgtring](https://pkg.go.dev/io#WriteString)
 ```Go
 func WriteString(w Writer, s string) (n int, err error)
