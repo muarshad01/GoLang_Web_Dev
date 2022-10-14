@@ -1,6 +1,6 @@
 # Writing a response
 
-```
+```Go
 body := "CHECK OUT THE RESPONSE BODY PAYLOAD"
 io.WriteString(conn, "HTTP/1.1 200 OK\r\n") 			// status line
 fmt.Fprintf(conn, "Content-Length: %d\r\n", len(body)) 		// header
@@ -16,6 +16,7 @@ io.WriteString(conn, body) 					// body, aka, payload
 ## Parsing String
 
 [strings.Fields](https://godoc.org/strings#Fields)
-```
+
+```Go
 func Fields(s string) []string
 ```
