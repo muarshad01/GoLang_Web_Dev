@@ -1,10 +1,17 @@
 # Writing a response
 
 [io.WriteSgtring](https://pkg.go.dev/io#WriteString)
-
+```Go
+func WriteString(w Writer, s string) (n int, err error)
+```
 [fmt.Fprintf](https://pkg.go.dev/fmt#Fprintf)
-
+```Go
+func Fprintf(w io.Writer, format string, a ...any) (n int, err error)
+```
 [fmt.Fprint](https://pkg.go.dev/fmt#Fprint)
+```Go
+func Fprint(w io.Writer, a ...any) (n int, err error)
+```
 
 ```Go
 body := "CHECK OUT THE RESPONSE BODY PAYLOAD"
