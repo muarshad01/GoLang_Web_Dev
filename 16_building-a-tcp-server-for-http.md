@@ -1,7 +1,9 @@
 # Writing a response
 
 [io.WriteSgtring](https://pkg.go.dev/io#WriteString)
+
 [fmt.Fprintf](https://pkg.go.dev/fmt#Fprintf)
+
 [fmt.Fprint](https://pkg.go.dev/fmt#Fprint)
 
 ```Go
