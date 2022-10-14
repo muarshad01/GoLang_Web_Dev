@@ -11,6 +11,24 @@ type Handler interface {
 
 -- Note: Any other type which has ServeHTTP(ResponseWriter, *Request) method is also of type Handler. So, we have at lest two types, a primary type ...implementing "implicitly" an an interface...so, a secondly type.  
 
+``` Go
+package main
+
+import (
+	"fmt"
+	"net/http"
+)
+
+type hotdog int
+
+func (m hotdog) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+	fmt.Println("Any code you want in this func")
+}
+
+func main() {
+
+}
+```
 ***
 
 # Server
