@@ -114,7 +114,11 @@ func main() {
 ``` Go
 func NewScanner(r io.Reader) *Scanner
 ```
-
+``` Go
+type Scanner struct {
+	// contains filtered or unexported fields
+}
+```
 - [bufio.Scan](https://godoc.org/bufio#Scanner.Scan)
 ``` Go
 func (s *Scanner) Scan() bool
