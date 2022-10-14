@@ -9,6 +9,8 @@ type Handler interface {
 }
 ```
 
+-- Note: Any other type which has ServeHTTP(ResponseWriter, *Request) method is also of type Handler. 
+
 ***
 
 # Server
