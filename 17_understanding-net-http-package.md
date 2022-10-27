@@ -130,7 +130,7 @@ The ```http.Request``` type is a struct which has a ```Method``` field.
 
 The ```http.Request``` type is a struct which has a ```URL``` field. Notice that the type is a ```*url.URL```
 
-Take a look at type ```url.URL```
+Take a look at type ```[url.URL](https://pkg.go.dev/net/url#URL)```
 
 ``` go
 type URL struct {
