@@ -192,7 +192,7 @@ type ResponseWriter interface {
 
 ## Setting a response header
 
-An ```http.ResponseWriter``` has a method ```Header()``` which returns a ```http.Header```.
+An ```[http.ResponseWriter](https://pkg.go.dev/net/http#ResponseWriter)``` has a method ```Header()``` which returns a ```http.Header```.
 
 Look at the documentation for ```http.Header```
 
