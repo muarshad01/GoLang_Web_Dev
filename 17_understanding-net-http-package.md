@@ -111,7 +111,7 @@ we see that this is a method attached to a *http.Request.
 
 ***
 
-If we look at **FormValue***
+If we look at **[FormValue](https://pkg.go.dev/net/http#Request.FormValue)***
 
 ``` go func (r *Request) FormValue(key string) string```
 
