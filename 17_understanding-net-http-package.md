@@ -152,7 +152,7 @@ type URL struct {
 
 The ```http.Request``` type is a struct which has a ```Header``` field. 
 
-From the documentation about the ```[http.Header](https://pkg.go.dev/net/http#Header)``` struct, we see that:
+From the documentation about the **[http.Header](https://pkg.go.dev/net/http#Header)** struct, we see that:
 
 ```
 type Header map[string][]string
