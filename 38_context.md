@@ -6,7 +6,7 @@ type Context = context.Context
 ```
 
 ```
-http://golang.rakyll.org/leakingctx/type Context interface {
+type Context interface {
 	// Deadline returns the time when work done on behalf of this context
 	// should be canceled. Deadline returns ok==false when no deadline is
 	// set. Successive calls to Deadline return the same results.
@@ -100,6 +100,8 @@ http://golang.rakyll.org/leakingctx/type Context interface {
 	Value(key any) any
 }
 ```
+
+[Using contexts to avoid leaking goroutines](http://rakyll.org/leakingctx/)
 
 [func (*Request) Context](https://pkg.go.dev/net/http#Request.Context)
 ```go
