@@ -4,3 +4,7 @@
 ```
 type Context = context.Context
 ```
+[func (*Request) Context](https://pkg.go.dev/net/http#Request.Context)
+```go
+func (r *Request) Context() context.Context
+```
