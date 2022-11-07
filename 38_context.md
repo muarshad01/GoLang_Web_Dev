@@ -5,6 +5,8 @@
 type Context = context.Context
 ```
 
+[type type Context interface {...}](https://pkg.go.dev/context#Context)
+
 ```
 type Context interface {
 	// Deadline returns the time when work done on behalf of this context
