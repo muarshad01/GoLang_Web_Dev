@@ -6,4 +6,7 @@
 
 # Useful Articles
 
-[Using contexts to avoid leaking goroutines](https://rakyll.org/leakingctx/)
+* [Using contexts to avoid leaking goroutines](https://rakyll.org/leakingctx/)
+* [JSON and Go](https://go.dev/blog/json)
+
+***
