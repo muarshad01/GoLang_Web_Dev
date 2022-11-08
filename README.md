@@ -10,3 +10,7 @@
 * [JSON and Go](https://go.dev/blog/json)
 
 ***
+
+# Tools
+
+* [JSON-to-Go Convert](https://mholt.github.io/json-to-go/)
