@@ -1,4 +1,4 @@
-# postgres
+# PostgreSQL
 
 * [Nice tutorial](https://www.tutorialspoint.com/postgresql/postgresql_create_database.htm)
 * [documenation reference](https://www.postgresql.org/docs/9.4/static/app-psql.html)
@@ -10,6 +10,8 @@
 
 ### mac
 Postgres.app is fine.
+
+***
 
 ## log in
 
