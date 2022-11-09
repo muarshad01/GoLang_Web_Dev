@@ -1,6 +1,7 @@
 # PostgreSQL
 
 * [Nice tutorial](https://www.tutorialspoint.com/postgresql/postgresql_create_database.htm)
+* [SQL Tutorial](https://www.w3schools.com/sql/default.asp)
 * [documenation reference](https://www.postgresql.org/docs/9.4/static/app-psql.html)
 
 ***
