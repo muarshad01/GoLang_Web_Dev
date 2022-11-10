@@ -174,17 +174,19 @@ SELECT * FROM phonenumbers;
 ***
 
 # Cross Join
-
+```
 SELECT <fields> FROM <table1> CROSS JOIN <table2>;
+```
 
 # Inner Join
-
+```
 SELECT <fields> FROM <table> INNER JOIN <table> ON <pkey> = <fkey>;
+```
 
 # Outer Join
-
+```
 SELECT <fields> FROM <table1> LEFT OUTER JOIN  <table2> ON <pkey> = <fkey>;
 SELECT <fields> FROM <table1> RIGHT OUTER JOIN <table2> ON <pkey> = <fkey>;
 SELECT <fields> FROM <table1> FULL OUTER JOIN  <table2> ON <pkey> = <fkey>;
-
+```
 ***
