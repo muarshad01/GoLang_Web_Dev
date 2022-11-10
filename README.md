@@ -9,6 +9,7 @@
 
 * [Using contexts to avoid leaking goroutines](https://rakyll.org/leakingctx/)
 * [JSON and Go](https://go.dev/blog/json)
+* [An Introduction to using SQL Databases in Go](https://www.alexedwards.net/blog/introduction-to-using-sql-databases-in-go)
 
 ***
 
