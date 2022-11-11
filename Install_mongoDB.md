@@ -23,17 +23,30 @@ $ export MONGODB_PATH=$HOME/MongoDB/mongodb-macos-x86_64-6.0.2
 $ export PATH=$PATH:$MONGODB_PATH/bin
 $ export MONGOSH_PATH=$HOME/MongoDB/mongosh-1.6.0-darwin-x64
 $ export PATH=$PATH:$MONGOSH_PATH/bin
+```
 
+```
 $ mongod --version
+```
 
-# ------------------------
+
 # Start the MongoDB Server
-# ------------------------
+```
 $ mkdir -p ~/data/db
 $ mongod --dbpath ~/data/db
+```
 
-# -----------------------
 # Start the MongoDB Shell
-# -----------------------
+```
 $ ./mongosh
+```
+
+```
+$ ./mongosh
+Current Mongosh Log ID:	636e29b3ab452c8fe738a99d
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
+Using MongoDB:		6.0.2
+Using Mongosh:		1.6.0
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
 ```
