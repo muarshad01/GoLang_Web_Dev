@@ -16,7 +16,7 @@ Try rerunning the app.
 
 ***
 
-Commands
+# Commands
 ```
-mongod --version
+$ mongod --version
 ```
