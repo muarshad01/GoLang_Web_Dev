@@ -21,9 +21,19 @@ Try rerunning the app.
 ```
 $ export MONGODB_PATH=$HOME/MongoDB/mongodb-macos-x86_64-6.0.2
 $ export PATH=$PATH:$MONGODB_PATH/bin
+$ export MONGOSH_PATH=$HOME/MongoDB/mongosh-1.6.0-darwin-x64
+$ export PATH=$PATH:$MONGOSH_PATH/bin
 
 $ mongod --version
 
+# ------------------------
+# Start the MongoDB Server
+# ------------------------
 $ mkdir -p ~/data/db
 $ mongod --dbpath ~/data/db
+
+# -----------------------
+# Start the MongoDB Shell
+# -----------------------
+$ ./mongosh
 ```
