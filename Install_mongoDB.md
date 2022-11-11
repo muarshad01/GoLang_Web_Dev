@@ -1,4 +1,4 @@
-# Download & Install MongoDB
+# Download & Install MongoDB (Server) and MongoDB Shell (Client)
 
 * [How to install MongoDB on MacOS](https://www.mongodb.com/try/download/community)
 * [MongoDB Shell Download](https://www.mongodb.com/try/download/shell)
@@ -17,7 +17,7 @@ Try rerunning the app.
 
 ***
 
-# MongoDB PATH - 
+# Set MongoDB 'PATH' 
 ```
 $ vim ~/.bash_profile
 
