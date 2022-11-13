@@ -42,7 +42,7 @@ $ mongod --dbpath ~/data/db
 
 # Start the MongoDB Shell
 ```
-$ ./mongosh
+$ mongosh
 
 Current Mongosh Log ID:	636e29b3ab452c8fe738a99d
 Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
