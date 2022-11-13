@@ -15,14 +15,15 @@ go get -u gopkg.in/mgo.v2
 # setup database
 
 #### restart mongo
-close any open mongo connections, then restart with these commands:
-```
-mongo
-```
 
-in a new tab
+start mongod (Server):
 ```
 mongod
+```
+
+In a new tab, start mongosh (Client):
+```
+mongo
 ```
 
 #### create db
