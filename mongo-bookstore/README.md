@@ -52,13 +52,13 @@ db.createUser(
 )
 ```
 
-#### exit mongo & then start again with auth enabled
+#### EXIT mongo (Ctrl-D) & then start again with auth enabled
 ```
-mongod --auth
+mongod --auth --dbpath ~/data/db
 ```
 
 ```
-mongo -u "bond" -p "moneypenny007" --authenticationDatabase "bookstore"
+mongosh -u "bond" -p "moneypenny007" --authenticationDatabase "bookstore"
 ```
 
 #### test
