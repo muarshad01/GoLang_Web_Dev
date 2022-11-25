@@ -8,6 +8,7 @@
 # Useful Articles
 
 * [Using contexts to avoid leaking goroutines](https://rakyll.org/leakingctx/)
+* [Go Concurrency Patterns: Context](https://go.dev/blog/context)
 * [LeakProf: Featherlight In-Production Goroutine Leak Detection](https://www.uber.com/blog/leakprof-featherlight-in-production-goroutine-leak-detection/)
 * [JSON and Go](https://go.dev/blog/json)
 * [An Introduction to using SQL Databases in Go](https://www.alexedwards.net/blog/introduction-to-using-sql-databases-in-go)
