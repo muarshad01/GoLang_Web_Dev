@@ -57,7 +57,7 @@ type Conn interface {
 }
 ```
 
-* NOTE: `Conn` has both `Reader` and `Writer` types. 
+* NOTE: `Conn` implements both `Reader` and `Writer` types (interfaces). 
 
 * Polymorphism in action!
 
