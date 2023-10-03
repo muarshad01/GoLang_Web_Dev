@@ -59,6 +59,22 @@ type Conn interface {
 
 ***
 
+[io.Reader](https://pkg.go.dev/io#Reader)
+```
+type Reader interface {
+	Read(p []byte) (n int, err error)
+}
+```
+
+[io.Writer](https://pkg.go.dev/io#Writer)
+```
+type Writer interface {
+	Write(p []byte) (n int, err error)
+}
+```
+
+***
+
 ## Dial
 
 [net.Dial](https://godoc.org/net#Dial)
