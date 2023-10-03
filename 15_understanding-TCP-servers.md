@@ -63,15 +63,19 @@ type Conn interface {
 
 ***
 
+## Read
+
 [io.Reader](https://pkg.go.dev/io#Reader)
-```
+```Go
 type Reader interface {
 	Read(p []byte) (n int, err error)
 }
 ```
+***
 
+## Write
 [io.Writer](https://pkg.go.dev/io#Writer)
-```
+```Go
 type Writer interface {
 	Write(p []byte) (n int, err error)
 }
