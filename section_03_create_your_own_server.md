@@ -10,6 +10,10 @@ $ curl -v google.com
 
 ## 21. TCP server - write to connection
 
+* HTTP runs on top of TCP
+    - HTTP request -> TCP server
+    - TCP server -> HTTP response
+
 ***
 
 ## 22. TCP server - read from connection using `bufio.Scanner`

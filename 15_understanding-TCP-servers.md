@@ -4,8 +4,10 @@
  
 [net.Listen](https://godoc.org/net#Listen)
 ``` Go
-func Listen(net, laddr string) (Listener, error)
+func Listen(network, laddr string) (Listener, error)
 ```
+
+***
 
 ## Listener
 
@@ -23,6 +25,8 @@ type Listener interface {
     Addr() Addr
 }
 ```
+
+***
 
 ## Connection
 
@@ -53,6 +57,8 @@ type Conn interface {
 }
 ```
 
+***
+
 ## Dial
 
 [net.Dial](https://godoc.org/net#Dial)
@@ -74,6 +80,10 @@ func WriteString(w Writer, s string) (n int, err error)
 func Fprintln(w io.Writer, a ...interface{}) (n int, err error)
 ```
 
+[fmt.Fprintf](https://pkg.go.dev/fmt#Fprintf)
+```
+func Fprintf(w io.Writer, format string, a ...any) (n int, err error)
+```
 ***
 
 # Read
