@@ -1,5 +1,11 @@
 ## 20. Understanding servers
 
+* Browser `More Tools` -> `Developer Tools` -> `Network` -> type `www.reddit.com` 
+
+```
+$ curl -v google.com
+```
+
 ***
 
 ## 21. TCP server - write to connection
