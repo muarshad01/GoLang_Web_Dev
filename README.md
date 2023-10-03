@@ -1,7 +1,7 @@
 ***
 
-[Section 03: Creating your own server](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_03_create_your_own_server.md)
-[Section 04: Understanding net/http package](https://github.com/muarshad01/Golang_Web_Dev/blob/section04/section_04_understanding_net_http_package.md)
+* [Section 03: Creating your own server](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_03_create_your_own_server.md)
+* [Section 04: Understanding net/http package](https://github.com/muarshad01/Golang_Web_Dev/blob/section04/section_04_understanding_net_http_package.md)
 ***
 
 # Books & Web-Links
