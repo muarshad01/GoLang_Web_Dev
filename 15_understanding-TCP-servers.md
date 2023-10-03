@@ -81,19 +81,6 @@ type Writer interface {
 }
 ```
 
-***
-
-## Dial
-
-[net.Dial](https://godoc.org/net#Dial)
-``` Go
-func Dial(network, address string) (Conn, error)
-```
-
-***
-
-# Write
-
 [io.WriteString](https://godoc.org/io#WriteString)
 ``` Go
 func WriteString(w Writer, s string) (n int, err error)
@@ -107,7 +94,16 @@ func Fprintln(w io.Writer, a ...interface{}) (n int, err error)
 [fmt.Fprintf](https://pkg.go.dev/fmt#Fprintf)
 ```
 func Fprintf(w io.Writer, format string, a ...any) (n int, err error)
+
+***
+
+## Dial
+
+[net.Dial](https://godoc.org/net#Dial)
+``` Go
+func Dial(network, address string) (Conn, error)
 ```
+
 ***
 
 # Read
