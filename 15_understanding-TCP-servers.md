@@ -99,6 +99,31 @@ func Fprintf(w io.Writer, format string, a ...any) (n int, err error)
 
 ***
 
+## Scanner
+
+[bufio.NewScanner](https://godoc.org/bufio#NewScanner)
+``` Go
+func NewScanner(r io.Reader) *Scanner
+```
+
+``` Go
+type Scanner struct {
+    // contains filtered or unexported fields
+}
+```
+
+[bufio.Scan](https://godoc.org/bufio#Scanner.Scan)
+``` Go
+func (s *Scanner) Scan() bool
+```
+
+[bufio.Text](https://godoc.org/bufio#Scanner.Text)
+``` Go
+func (s *Scanner) Text() string
+```
+
+***
+
 ## Dial
 
 [net.Dial](https://godoc.org/net#Dial)
@@ -108,14 +133,6 @@ func Dial(network, address string) (Conn, error)
 
 ***
 
-# Read
-
-[io.Reader](https://pkg.go.dev/io#Reader)
-```Go
-type Reader interface {
-	Read(p []byte) (n int, err error)
-}
-```
 
 - [ioutil.ReadAll](https://godoc.org/io/ioutil#ReadAll)
 ``` Go
@@ -141,31 +158,6 @@ func main() {
 	fmt.Printf("%s", b)
 
 }
-```
-
-***
-
-## Scanner
-
-[bufio.NewScanner](https://godoc.org/bufio#NewScanner)
-``` Go
-func NewScanner(r io.Reader) *Scanner
-```
-
-``` Go
-type Scanner struct {
-	// contains filtered or unexported fields
-}
-```
-
-[bufio.Scan](https://godoc.org/bufio#Scanner.Scan)
-``` Go
-func (s *Scanner) Scan() bool
-```
-
-[bufio.Text](https://godoc.org/bufio#Scanner.Text)
-``` Go
-func (s *Scanner) Text() string
 ```
 
 ***
