@@ -74,6 +74,7 @@ type Reader interface {
 ***
 
 ## Write
+
 [io.Writer](https://pkg.go.dev/io#Writer)
 ```Go
 type Writer interface {
@@ -94,6 +95,7 @@ func Fprintln(w io.Writer, a ...interface{}) (n int, err error)
 [fmt.Fprintf](https://pkg.go.dev/fmt#Fprintf)
 ```
 func Fprintf(w io.Writer, format string, a ...any) (n int, err error)
+```
 
 ***
 
