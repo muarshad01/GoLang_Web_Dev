@@ -57,6 +57,10 @@ type Conn interface {
 }
 ```
 
+* NOTE: `Conn` has both `Reader` and `Writer` types. 
+
+* Polymorphism in action!
+
 ***
 
 [io.Reader](https://pkg.go.dev/io#Reader)
