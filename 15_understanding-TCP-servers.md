@@ -145,6 +145,8 @@ func main() {
 
 ***
 
+## Scanner
+
 [bufio.NewScanner](https://godoc.org/bufio#NewScanner)
 ``` Go
 func NewScanner(r io.Reader) *Scanner
