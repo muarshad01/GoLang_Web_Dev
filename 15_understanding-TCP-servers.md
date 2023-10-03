@@ -4,8 +4,10 @@
  
 [net.Listen](https://godoc.org/net#Listen)
 ``` Go
-func Listen(net, laddr string) (Listener, error)
+func Listen(network, laddr string) (Listener, error)
 ```
+
+***
 
 ## Listener
 
@@ -23,6 +25,8 @@ type Listener interface {
     Addr() Addr
 }
 ```
+
+***
 
 ## Connection
 
@@ -53,16 +57,35 @@ type Conn interface {
 }
 ```
 
-## Dial
+* NOTE: `Conn` implements both `Reader` and `Writer` types (interfaces). 
 
-[net.Dial](https://godoc.org/net#Dial)
-``` Go
-func Dial(network, address string) (Conn, error)
-```
+* Polymorphism in action!
 
 ***
 
-# Write
+## Read
+
+[io.Reader](https://pkg.go.dev/io#Reader)
+```Go
+type Reader interface {
+	Read(p []byte) (n int, err error)
+}
+```
+
+[ioutil.ReadAll](https://godoc.org/io/ioutil#ReadAll)
+``` Go
+func ReadAll(r io.Reader) ([]byte, error)
+```
+***
+
+## Write
+
+[io.Writer](https://pkg.go.dev/io#Writer)
+```Go
+type Writer interface {
+	Write(p []byte) (n int, err error)
+}
+```
 
 [io.WriteString](https://godoc.org/io#WriteString)
 ``` Go
@@ -74,69 +97,54 @@ func WriteString(w Writer, s string) (n int, err error)
 func Fprintln(w io.Writer, a ...interface{}) (n int, err error)
 ```
 
+[fmt.Fprintf](https://pkg.go.dev/fmt#Fprintf)
+```
+func Fprintf(w io.Writer, format string, a ...any) (n int, err error)
+```
+
 ***
 
-# Read
+## Scanner
 
-[io.Reader](https://pkg.go.dev/io#Reader)
-```Go
-type Reader interface {
-	Read(p []byte) (n int, err error)
-}
-```
-
-- [ioutil.ReadAll](https://godoc.org/io/ioutil#ReadAll)
-``` Go
-func ReadAll(r io.Reader) ([]byte, error)
-```
-``` Go
-
-import (
-	"fmt"
-	"io/ioutil"
-	"log"
-	"strings"
-)
-
-func main() {
-	r := strings.NewReader("Go is a general-purpose language designed with systems programming in mind.")
-
-	b, err := ioutil.ReadAll(r)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	fmt.Printf("%s", b)
-
-}
-```
-- [bufio.NewScanner](https://godoc.org/bufio#NewScanner)
+[bufio.NewScanner](https://godoc.org/bufio#NewScanner)
 ``` Go
 func NewScanner(r io.Reader) *Scanner
 ```
+
 ``` Go
 type Scanner struct {
-	// contains filtered or unexported fields
+    // contains filtered or unexported fields
 }
 ```
-- [bufio.Scan](https://godoc.org/bufio#Scanner.Scan)
+
+[bufio.Scan](https://godoc.org/bufio#Scanner.Scan)
 ``` Go
 func (s *Scanner) Scan() bool
 ```
 
-- [bufio.Text](https://godoc.org/bufio#Scanner.Text)
+[bufio.Text](https://godoc.org/bufio#Scanner.Text)
 ``` Go
 func (s *Scanner) Text() string
 ```
 
 ***
 
+## Dial
+
+[net.Dial](https://godoc.org/net#Dial)
+``` Go
+func Dial(network, address string) (Conn, error)
+```
+
+***
+
 # Read & Write
 
-- [io.Copy](https://godoc.org/io#Copy)
+[io.Copy](https://godoc.org/io#Copy)
 ``` GO
 func Copy(dst Writer, src Reader) (written int64, err error)
 ```
+
 ``` Go
 package main
 
@@ -156,3 +164,5 @@ func main() {
 
 }
 ```
+
+***
