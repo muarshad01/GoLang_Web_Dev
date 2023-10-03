@@ -133,31 +133,9 @@ func Dial(network, address string) (Conn, error)
 
 ***
 
-
-- [ioutil.ReadAll](https://godoc.org/io/ioutil#ReadAll)
+[ioutil.ReadAll](https://godoc.org/io/ioutil#ReadAll)
 ``` Go
 func ReadAll(r io.Reader) ([]byte, error)
-```
-``` Go
-
-import (
-	"fmt"
-	"io/ioutil"
-	"log"
-	"strings"
-)
-
-func main() {
-	r := strings.NewReader("Go is a general-purpose language designed with systems programming in mind.")
-
-	b, err := ioutil.ReadAll(r)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	fmt.Printf("%s", b)
-
-}
 ```
 
 ***
