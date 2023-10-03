@@ -142,21 +142,26 @@ func main() {
 
 }
 ```
-- [bufio.NewScanner](https://godoc.org/bufio#NewScanner)
+
+***
+
+[bufio.NewScanner](https://godoc.org/bufio#NewScanner)
 ``` Go
 func NewScanner(r io.Reader) *Scanner
 ```
+
 ``` Go
 type Scanner struct {
 	// contains filtered or unexported fields
 }
 ```
-- [bufio.Scan](https://godoc.org/bufio#Scanner.Scan)
+
+[bufio.Scan](https://godoc.org/bufio#Scanner.Scan)
 ``` Go
 func (s *Scanner) Scan() bool
 ```
 
-- [bufio.Text](https://godoc.org/bufio#Scanner.Text)
+[bufio.Text](https://godoc.org/bufio#Scanner.Text)
 ``` Go
 func (s *Scanner) Text() string
 ```
