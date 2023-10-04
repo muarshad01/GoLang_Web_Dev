@@ -29,3 +29,20 @@ func StripPrefix(prefix string, h Handler) Handler
 ```
 
 ***
+
+[log.Fatal](https://pkg.go.dev/log#Fatal)
+```go
+func Fatal(v ...any)
+```
+
+***
+
+[http.Error](https://pkg.go.dev/net/http#Error)
+```go
+func Error(w ResponseWriter, error string, code int)
+```
+
+***
+
+
+
