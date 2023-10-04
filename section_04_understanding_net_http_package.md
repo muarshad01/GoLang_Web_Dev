@@ -1,6 +1,34 @@
-# Handler
+## 29. `net/http` package - an overview
 
-*This is one of the most important things to know*
+***
+
+## 30. Understanding & using `ListenAndServe`
+
+***
+
+## 31. Foundation of `net/http: Handler`, `ListenAndServer`, `Request`, `ResponseWriter`
+
+***
+
+## 32. Retrieving from values - exploring `*http.Request`
+
+***
+
+## 33. Retrieving other request values - exploring `*http.Request`
+
+***
+
+## 34. Exploring `http.ResponseWriter` - writing headers to the response
+
+***
+
+## 35. Review
+
+***
+
+***
+
+## Handler Interface
 
 [http.Handler](https://godoc.org/net/http#Handler)
 ``` Go
@@ -29,31 +57,31 @@ func main() {
 }
 ```
 
--- Note: Any other type which has ServeHTTP(ResponseWriter, *Request) method is also of type Handler. So, we have at lest two types, a primary type ...implementing "implicitly" an an interface...so, a secondary type. Therefore, type hotdog is also of type handler.
+* Any other type(e.g., hotdog) which has `ServeHTTP(w http.ResponseWriter, r *http.Request)` method is also of `type Handler`. 
+
+* It implicitly implements a `http.Handler` interface.
 
 ***
 
 # Server
 
 [http.ListenAndServe](https://godoc.org/net/http#ListenAndServe)
-``` Go
+```go
 func ListenAndServe(addr string, handler Handler) error
 ```
 
 [http.ListenAndServeTLS](https://godoc.org/net/http#ListenAndServeTLS)
-``` Go
+```go
 func ListenAndServeTLS(addr, certFile, keyFile string, handler Handler) error
 ```
 
-*Notice that both of the above functions take a handler*
+* Notice that both of the above functions take a `http.Handler`
 
 ***
 
-# Request
+## `http.Request`
 
-See [http.Request](https://godoc.org/net/http#Request) in the documentation.
- 
-Here it is with *most of the comments and some of the fields* stripped out:
+[http.Request](https://godoc.org/net/http#Request) with most of the comments and some of the fields stripped out:
 
 ```go 
 type Request struct {
@@ -80,15 +108,11 @@ type Request struct {
 }
 ```
 
-Also see the index showing type [Request]() from the http package.
+* [http.Request](https://godoc.org/net/http#Request) type is a `struct`. It has has a `Method string` field.
 
-Some interesting things you can do with a request:
-
-## Retrieve URL & Form data
-
-```http.Request``` is a struct. It has the fields ```Form``` & ```PostForm```. If we read the documentation on these, we see:
-
-```
+* [http.Request](https://godoc.org/net/http#Request) type is a `struct`. 
+    - It has `Form url.Values` & `PostForm url.Values` fields. If we read the documentation on these, we'll see:
+```go
     // Form contains the parsed form data, including both the URL
     // field's query parameters and the POST or PUT form data.
     // This field is only available after **ParseForm** is called.
@@ -103,35 +127,18 @@ Some interesting things you can do with a request:
 
 ```
 
-If we look at **[ParseForm](https://pkg.go.dev/net/http#Request.ParseForm)**
+`Form` & `PostForm` fields are available after [ParseForm](https://pkg.go.dev/net/http#Request.ParseForm) method, which is attached to `*http.Request`
+```go 
+func (r *Request) ParseForm() error
+```
 
-```go func (r *Request) ParseForm() error ```
+* If we look at [FormValue](https://pkg.go.dev/net/http#Request.FormValue)
+```go 
+func (r *Request) FormValue(key string) string
+```
+we see that this is a method attached to a `*http.Request`. `FormValue` returns the first value for the named component of the query. `POST` and `PUT` body parameters take precedence over `URL` query string values. `FormValue` calls `ParseMultipartForm` and `ParseForm` if necessary and ignores any errors returned by these functions. If key is not present, `FormValue` returns the empty string. To access multiple values of the same key, call `ParseForm` and then inspect `Request Form` directly.
 
-we see that this is a method attached to a *http.Request.
-
-***
-
-If we look at **[FormValue](https://pkg.go.dev/net/http#Request.FormValue)**
-
-``` go func (r *Request) FormValue(key string) string```
-
-we see that this is a method attached to a *http.Request. FormValue returns the first value for the named component of the query. POST and PUT body parameters take precedence over URL query string values. FormValue calls ParseMultipartForm and ParseForm if necessary and ignores any errors returned by these functions. If key is not present, FormValue returns the empty string. To access multiple values of the same key, call ParseForm and then inspect Request.Form directly.
-
-
-***
-
-## See the HTTP Method
-
-The ```http.Request``` type is a struct which has a ```Method``` field.
-
-***
-
-## See URL values
-
-The ```http.Request``` type is a struct which has a ```URL``` field. Notice that the type is a ```*url.URL```
-
-Take a look at type [url.URL](https://pkg.go.dev/net/url#URL)
-
+* The `http.Request` type is a `struct`, which has a [url.URL](https://pkg.go.dev/net/url#URL) field. Notice that the type is `*url.URL`
 ``` go
 type URL struct {
     Scheme     string
@@ -146,24 +153,17 @@ type URL struct {
 }
 ```
 
-***
-
-## Work with the HTTP header
-
-The ```http.Request``` type is a struct which has a ```Header``` field. 
-
-From the documentation about the **[http.Header](https://pkg.go.dev/net/http#Header)**, we see that:
-
-```
+* The `http.Request` type is a `struct`, which has a [http.Header](https://pkg.go.dev/net/http#Header) field
+```go
 type Header map[string][]string
 ```
 
 ***
 
-# Response
+## `http.ResponseWriter`
 
 [http.ResponseWriter](https://godoc.org/net/http#ResponseWriter)
-``` Go
+```go
 type ResponseWriter interface {
     // Header returns the header map that will be sent by
     // WriteHeader. Changing the header after a call to
@@ -188,22 +188,13 @@ type ResponseWriter interface {
 }
 ```
 
-***
-
-## Setting a response header
-
-An **[http.ResponseWriter](https://pkg.go.dev/net/http#ResponseWriter)** has a method ```Header()``` which returns a ```http.Header```.
-
-Look at the documentation for ```http.Header```
-
-``` Go
+[http.ResponseWriter](https://pkg.go.dev/net/http#ResponseWriter) has a method `Header() Header`, which returns a `http.Header`.
+```go
 type Header map[string][]string
-
 ```
 
-Look at the methods which are attached to type ```http.Header```
-
-``` go
+List of methods attached to type `http.Header`:
+```go
 type Header
 func (h Header) Add(key, value string)
 func (h Header) Del(key string)
@@ -214,7 +205,8 @@ func (h Header) WriteSubset(w io.Writer, exclude map[string]bool) error
 ```
 
 We can set headers for a response like this:
-
-``` Go
+```go
 res.Header().Set("Content-Type", "text/html; charset=utf-8")
 ```
+
+***
