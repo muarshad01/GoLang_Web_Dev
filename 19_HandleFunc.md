@@ -1,10 +1,12 @@
 # HandleFunc
 
 [http.HandleFunc](https://godoc.org/net/http#HandleFunc)
-``` Go
+```go
 func HandleFunc(pattern string, handler func(ResponseWriter, *Request))
 ```
-``` Go
+* `http.HandleFunc` registers the handler function for the given pattern in the `DefaultServeMux`. The documentation for `ServeMux` explains how patterns are matched.
+
+```go
 package main
 
 import (
