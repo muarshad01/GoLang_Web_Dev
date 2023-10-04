@@ -51,9 +51,7 @@ func ListenAndServeTLS(addr, certFile, keyFile string, handler Handler) error
 
 ## Request
 
-[http.Request](https://godoc.org/net/http#Request)
- 
-* Here it is with most of the comments and some of the fields stripped out:
+[http.Request](https://godoc.org/net/http#Request) with most of the comments and some of the fields stripped out:
 
 ```go 
 type Request struct {
@@ -79,10 +77,9 @@ type Request struct {
     RemoteAddr string
 }
 ```
-
 Some interesting things you can do with a request:
 
-### Retrieve URL & Form data
+### Retrieve `URL` & `Form` data
 
 `http.Request` is a `struct`. It has the fields `Form` & `PostForm`. If we read the documentation on these, we'll see:
 
