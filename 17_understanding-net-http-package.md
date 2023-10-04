@@ -27,7 +27,7 @@ func main() {
 }
 ```
 
-* Any other type which has `ServeHTTP(w http.ResponseWriter, r *http.Request)` method is also of `type Handler`. 
+* Any other type(e.g., hotdog) which has `ServeHTTP(w http.ResponseWriter, r *http.Request)` method is also of `type Handler`. 
 
 * It implicitly implements a `http.Handler` interface.
 
@@ -49,7 +49,7 @@ func ListenAndServeTLS(addr, certFile, keyFile string, handler Handler) error
 
 ***
 
-## Request
+## `http.Request`
 
 [http.Request](https://godoc.org/net/http#Request) with most of the comments and some of the fields stripped out:
 
@@ -80,7 +80,8 @@ type Request struct {
 
 * [http.Request](https://godoc.org/net/http#Request) type is a `struct`. It has has a `Method string` field.
 
-* [http.Request](https://godoc.org/net/http#Request) type is a `struct`. It has `Form url.Values` & `PostForm url.Values` fields. If we read the documentation on these, we'll see:
+* [http.Request](https://godoc.org/net/http#Request) type is a `struct`. 
+    - It has `Form url.Values` & `PostForm url.Values` fields. If we read the documentation on these, we'll see:
 ```go
     // Form contains the parsed form data, including both the URL
     // field's query parameters and the POST or PUT form data.
@@ -122,14 +123,14 @@ type URL struct {
 }
 ```
 
-* The `http.Request` type is a `struct`, which has a [http.Header](https://pkg.go.dev/net/http#Header) field:
+* The `http.Request` type is a `struct`, which has a [http.Header](https://pkg.go.dev/net/http#Header) field
 ```go
 type Header map[string][]string
 ```
 
 ***
 
-## Response
+## `http.ResponseWriter`
 
 [http.ResponseWriter](https://godoc.org/net/http#ResponseWriter)
 ```go
@@ -162,8 +163,8 @@ type ResponseWriter interface {
 type Header map[string][]string
 ```
 
-Look at the methods which are attached to type `http.Header`
-``` go
+List of methods attached to type `http.Header`:
+```go
 type Header
 func (h Header) Add(key, value string)
 func (h Header) Del(key string)
