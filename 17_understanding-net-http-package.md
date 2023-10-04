@@ -1,6 +1,6 @@
-# Handler
+## Handler
 
-*This is one of the most important things to know*
+* This is one of the most important things to know
 
 [http.Handler](https://godoc.org/net/http#Handler)
 ``` Go
@@ -29,7 +29,7 @@ func main() {
 }
 ```
 
--- Note: Any other type which has ServeHTTP(ResponseWriter, *Request) method is also of type Handler. So, we have at lest two types, a primary type ...implementing "implicitly" an an interface...so, a secondary type. Therefore, type hotdog is also of type handler.
+* **Note**: Any other type which has `ServeHTTP(w http.ResponseWriter, r *http.Request)` method is also of type Handler. So, we have at lest two types, a primary type implementing "implicitly"an interface and a secondary type. Therefore, type `hotdog` is also of type `Handler`.
 
 ***
 
