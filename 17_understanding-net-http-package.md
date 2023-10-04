@@ -77,13 +77,11 @@ type Request struct {
     RemoteAddr string
 }
 ```
-Some interesting things you can do with a request:
 
-### Retrieve `URL` & `Form` data
+* [http.Request](https://godoc.org/net/http#Request) type is a `struct`, which has a `Method string` field.
 
-`http.Request` is a `struct`. It has the fields `Form` & `PostForm`. If we read the documentation on these, we'll see:
-
-```
+* [http.Request](https://godoc.org/net/http#Request) type is a is a `struct`. It has the fields `Form url.Values` & `PostForm url.Values`. If we read the documentation on these, we'll see:
+```go
     // Form contains the parsed form data, including both the URL
     // field's query parameters and the POST or PUT form data.
     // This field is only available after **ParseForm** is called.
@@ -98,7 +96,7 @@ Some interesting things you can do with a request:
 
 ```
 
-[ParseForm](https://pkg.go.dev/net/http#Request.ParseForm) is a method attached to `*http.Request`
+`Form` & `PostForm` are available after [ParseForm](https://pkg.go.dev/net/http#Request.ParseForm) method, which is attached to `*http.Request`
 ```go 
 func (r *Request) ParseForm() error
 ```
@@ -111,11 +109,7 @@ func (r *Request) FormValue(key string) string
 ```
 we see that this is a method attached to a `*http.Request`. `FormValue` returns the first value for the named component of the query. `POST` and `PUT` body parameters take precedence over `URL` query string values. `FormValue` calls `ParseMultipartForm` and `ParseForm` if necessary and ignores any errors returned by these functions. If key is not present, `FormValue` returns the empty string. To access multiple values of the same key, call `ParseForm` and then inspect `Request Form` directly.
 
-***
-
-### See the `HTTP Method`
-
-The `http.Request` type is a `struct`, which has a `Method` field.
+* [http.Request](https://godoc.org/net/http#Request) type is a `struct`, which has a `Method string` field.
 
 ***
 
