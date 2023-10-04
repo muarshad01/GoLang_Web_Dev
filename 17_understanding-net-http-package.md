@@ -29,23 +29,23 @@ func main() {
 
 * Any other type which has `ServeHTTP(w http.ResponseWriter, r *http.Request)` method is also of `type Handler`. 
 
-* It implicitly implements a `Handler` interface.
+* It implicitly implements a `http.Handler` interface.
 
 ***
 
 # Server
 
 [http.ListenAndServe](https://godoc.org/net/http#ListenAndServe)
-``` Go
+```go
 func ListenAndServe(addr string, handler Handler) error
 ```
 
 [http.ListenAndServeTLS](https://godoc.org/net/http#ListenAndServeTLS)
-``` Go
+```go
 func ListenAndServeTLS(addr, certFile, keyFile string, handler Handler) error
 ```
 
-* Notice that both of the above functions take a `Handler`
+* Notice that both of the above functions take a `http.Handler`
 
 ***
 
@@ -78,9 +78,9 @@ type Request struct {
 }
 ```
 
-* [http.Request](https://godoc.org/net/http#Request) type is a `struct`, which has a `Method string` field.
+* [http.Request](https://godoc.org/net/http#Request) type is a `struct`. It has has a `Method string` field.
 
-* [http.Request](https://godoc.org/net/http#Request) type is a is a `struct`. It has the fields `Form url.Values` & `PostForm url.Values`. If we read the documentation on these, we'll see:
+* [http.Request](https://godoc.org/net/http#Request) type is a `struct`. It has `Form url.Values` & `PostForm url.Values` fields. If we read the documentation on these, we'll see:
 ```go
     // Form contains the parsed form data, including both the URL
     // field's query parameters and the POST or PUT form data.
@@ -96,26 +96,18 @@ type Request struct {
 
 ```
 
-`Form` & `PostForm` are available after [ParseForm](https://pkg.go.dev/net/http#Request.ParseForm) method, which is attached to `*http.Request`
+`Form` & `PostForm` fields are available after [ParseForm](https://pkg.go.dev/net/http#Request.ParseForm) method, which is attached to `*http.Request`
 ```go 
 func (r *Request) ParseForm() error
 ```
 
-***
-
-If we look at [FormValue](https://pkg.go.dev/net/http#Request.FormValue)
+* If we look at [FormValue](https://pkg.go.dev/net/http#Request.FormValue)
 ```go 
 func (r *Request) FormValue(key string) string
 ```
 we see that this is a method attached to a `*http.Request`. `FormValue` returns the first value for the named component of the query. `POST` and `PUT` body parameters take precedence over `URL` query string values. `FormValue` calls `ParseMultipartForm` and `ParseForm` if necessary and ignores any errors returned by these functions. If key is not present, `FormValue` returns the empty string. To access multiple values of the same key, call `ParseForm` and then inspect `Request Form` directly.
 
-* [http.Request](https://godoc.org/net/http#Request) type is a `struct`, which has a `Method string` field.
-
-***
-
-### See `url.URL` values
-
-The `http.Request` type is a `struct`, which has a [url.URL](https://pkg.go.dev/net/url#URL) field. Notice that the type is `*url.URL`
+* The `http.Request` type is a `struct`, which has a [url.URL](https://pkg.go.dev/net/url#URL) field. Notice that the type is `*url.URL`
 ``` go
 type URL struct {
     Scheme     string
@@ -130,11 +122,7 @@ type URL struct {
 }
 ```
 
-***
-
-## Work with `http.Header`
-
-The `http.Request` type is a `struct`, which has a [http.Header](https://pkg.go.dev/net/http#Header) field:
+* The `http.Request` type is a `struct`, which has a [http.Header](https://pkg.go.dev/net/http#Header) field:
 ```go
 type Header map[string][]string
 ```
