@@ -119,12 +119,9 @@ The `http.Request` type is a `struct`, which has a `Method` field.
 
 ***
 
-### See URL values
+### See `url.URL` values
 
-The `http.Request` type is a `struct`, which has a `URL` field. Notice that the type is a `*url.URL`
-
-Take a look at type [url.URL](https://pkg.go.dev/net/url#URL)
-
+The `http.Request` type is a `struct`, which has a [url.URL](https://pkg.go.dev/net/url#URL) field. Notice that the type is `*url.URL`
 ``` go
 type URL struct {
     Scheme     string
@@ -141,12 +138,9 @@ type URL struct {
 
 ***
 
-## Work with the `HTTP Header`
+## Work with `http.Header`
 
-The `http.Request` type is a `struct`, which has a `Header` field. 
-
-From the documentation about the [http.Header](https://pkg.go.dev/net/http#Header), we see that:
-
+The `http.Request` type is a `struct`, which has a [http.Header](https://pkg.go.dev/net/http#Header) field:
 ```go
 type Header map[string][]string
 ```
