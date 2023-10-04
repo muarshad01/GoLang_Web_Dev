@@ -1,7 +1,6 @@
 ***
 
 * [Section 03: Creating your own server](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_03_create_your_own_server.md)
-* []()
 * [Section 05:understanding routing](https://github.com/muarshad01/Golang_Web_Dev/blob/section_05/section_05_understanding_routing.md)
 
 ***
