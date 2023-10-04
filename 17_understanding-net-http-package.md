@@ -49,11 +49,11 @@ func ListenAndServeTLS(addr, certFile, keyFile string, handler Handler) error
 
 ***
 
-# Request
+## Request
 
-See [http.Request](https://godoc.org/net/http#Request) in the documentation.
+[http.Request](https://godoc.org/net/http#Request)
  
-Here it is with *most of the comments and some of the fields* stripped out:
+* Here it is with most of the comments and some of the fields stripped out:
 
 ```go 
 type Request struct {
@@ -80,13 +80,11 @@ type Request struct {
 }
 ```
 
-Also see the index showing type [Request]() from the http package.
-
 Some interesting things you can do with a request:
 
-## Retrieve URL & Form data
+### Retrieve URL & Form data
 
-```http.Request``` is a struct. It has the fields ```Form``` & ```PostForm```. If we read the documentation on these, we see:
+`http.Request` is a `struct`. It has the fields `Form` & `PostForm`. If we read the documentation on these, we'll see:
 
 ```
     // Form contains the parsed form data, including both the URL
@@ -103,11 +101,10 @@ Some interesting things you can do with a request:
 
 ```
 
-If we look at **[ParseForm](https://pkg.go.dev/net/http#Request.ParseForm)**
-
-```go func (r *Request) ParseForm() error ```
-
-we see that this is a method attached to a *http.Request.
+[ParseForm](https://pkg.go.dev/net/http#Request.ParseForm) is a method attached to `*http.Request`
+```go 
+func (r *Request) ParseForm() error
+```
 
 ***
 
