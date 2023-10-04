@@ -105,24 +105,23 @@ func (r *Request) ParseForm() error
 
 ***
 
-If we look at **[FormValue](https://pkg.go.dev/net/http#Request.FormValue)**
-
-``` go func (r *Request) FormValue(key string) string```
-
-we see that this is a method attached to a *http.Request. FormValue returns the first value for the named component of the query. POST and PUT body parameters take precedence over URL query string values. FormValue calls ParseMultipartForm and ParseForm if necessary and ignores any errors returned by these functions. If key is not present, FormValue returns the empty string. To access multiple values of the same key, call ParseForm and then inspect Request.Form directly.
-
-
-***
-
-## See the HTTP Method
-
-The ```http.Request``` type is a struct which has a ```Method``` field.
+If we look at [FormValue](https://pkg.go.dev/net/http#Request.FormValue)
+```go 
+func (r *Request) FormValue(key string) string
+```
+we see that this is a method attached to a `*http.Request`. `FormValue` returns the first value for the named component of the query. `POST` and `PUT` body parameters take precedence over `URL` query string values. `FormValue` calls `ParseMultipartForm` and `ParseForm` if necessary and ignores any errors returned by these functions. If key is not present, `FormValue` returns the empty string. To access multiple values of the same key, call `ParseForm` and then inspect `Request Form` directly.
 
 ***
 
-## See URL values
+### See the `HTTP Method`
 
-The ```http.Request``` type is a struct which has a ```URL``` field. Notice that the type is a ```*url.URL```
+The `http.Request` type is a `struct`, which has a `Method` field.
+
+***
+
+### See URL values
+
+The `http.Request` type is a `struct`, which has a `URL` field. Notice that the type is a `*url.URL`
 
 Take a look at type [url.URL](https://pkg.go.dev/net/url#URL)
 
@@ -142,22 +141,22 @@ type URL struct {
 
 ***
 
-## Work with the HTTP header
+## Work with the `HTTP Header`
 
-The ```http.Request``` type is a struct which has a ```Header``` field. 
+The `http.Request` type is a `struct`, which has a `Header` field. 
 
-From the documentation about the **[http.Header](https://pkg.go.dev/net/http#Header)**, we see that:
+From the documentation about the [http.Header](https://pkg.go.dev/net/http#Header), we see that:
 
-```
+```go
 type Header map[string][]string
 ```
 
 ***
 
-# Response
+## Response
 
 [http.ResponseWriter](https://godoc.org/net/http#ResponseWriter)
-``` Go
+```go
 type ResponseWriter interface {
     // Header returns the header map that will be sent by
     // WriteHeader. Changing the header after a call to
@@ -186,17 +185,15 @@ type ResponseWriter interface {
 
 ## Setting a response header
 
-An **[http.ResponseWriter](https://pkg.go.dev/net/http#ResponseWriter)** has a method ```Header()``` which returns a ```http.Header```.
+An [http.ResponseWriter](https://pkg.go.dev/net/http#ResponseWriter) has a method `Header()`, which returns a `http.Header`.
 
-Look at the documentation for ```http.Header```
-
-``` Go
+Look at the documentation for `http.Header`
+```go
 type Header map[string][]string
 
 ```
 
-Look at the methods which are attached to type ```http.Header```
-
+Look at the methods which are attached to type `http.Header`
 ``` go
 type Header
 func (h Header) Add(key, value string)
@@ -208,7 +205,8 @@ func (h Header) WriteSubset(w io.Writer, exclude map[string]bool) error
 ```
 
 We can set headers for a response like this:
-
-``` Go
+```go
 res.Header().Set("Content-Type", "text/html; charset=utf-8")
 ```
+
+***
