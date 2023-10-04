@@ -29,7 +29,9 @@ func main() {
 }
 ```
 
-* **Note**: Any other type which has `ServeHTTP(w http.ResponseWriter, r *http.Request)` method is also of type Handler. So, we have at lest two types, a primary type implementing "implicitly"an interface and a secondary type. Therefore, type `hotdog` is also of type `Handler`.
+* Any other type which has `ServeHTTP(w http.ResponseWriter, r *http.Request)` method is also of `type Handler`. 
+
+* It will implicitly implement a `Handler` interface.
 
 ***
 
@@ -45,7 +47,7 @@ func ListenAndServe(addr string, handler Handler) error
 func ListenAndServeTLS(addr, certFile, keyFile string, handler Handler) error
 ```
 
-*Notice that both of the above functions take a handler*
+* Notice that both of the above functions take a handler
 
 ***
 
