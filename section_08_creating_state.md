@@ -6,22 +6,33 @@
 
 ## 54. Passing values through the URL
 
-### Form Submissoion
+### `Form` Submission
 
-* We can pass values from the `client` to the `server` through the `URL` or through the `body of the request`.
+* We can pass values from the `client` to the `server` through the `URL` or through the `request body's payload`.
 
-* When you submit a form, you can use either the `POST` or `GET` method. The `POST` method sends the form submission through the `body of the request`. The `GET` method for a form submission sends the form submission values through the `url`.
+* When you submit a `form`, you can use either the `POST` or `GET` method. 
+```
+<form method="POST">
+    <input type="submit">
+</form>
+```
+* If `form` method attribute is `POST`, then the values of the `form` are send to the server through `request body's payload`. 
 
-I remember this like this:
-* `POST` and `Body` both have 4 letters
-* `GET` and `URL` both have 3 letters
+```
+<form method="GET">
+    <input type="submit">
+</form>
+```
+* If `form` method attributed is `GET`, then the value of the `form` are send to the server through the `URL`.
+
+* I remember this like this:
+    - `POST` and `Body` both have 4 letters
+    - `GET` and `URL` both have 3 letters
 
 ```
 protocol://<subdomain>.<domain>:<port>/path?<identifier-1>=<value-1>&<identifier-2>=<value-2>#<fragment>
 ```
-
 * `?` is the query. You can have multiple identifiers and values
-
 ```
 https://<video>.<google.co.uk>:80/docid=abcd&hl=en#00hasfds
 ```
