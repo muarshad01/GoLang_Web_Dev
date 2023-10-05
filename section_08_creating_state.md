@@ -20,16 +20,13 @@ I remember this like this:
 protocol://<subdomain>.<domain>:<port>/path?<identifier-1>=<value-1>&<identifier-2>=<value-2>#<fragment>
 ```
 
-```
-? is the query. You can have multiple identifiers and values
-```
+* `?` is the query. You can have multiple identifiers and values
 
 ```
 https://<video>.<google.co.uk>:80/docid=abcd&hl=en#00hasfds
 ```
-### Retrieving values
 
-While there are multiple ways to retrieve values, we will stick with:
+### Retrieving values
 
 [func (*Request) FormValue](https://godoc.org/net/http#Request.FormValue)
 ``` Go
