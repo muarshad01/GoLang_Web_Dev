@@ -8,6 +8,8 @@
 
 * [Section 06: Serving Files](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_06_serving_files.md)
 
+* [Section 08: Creating State](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_08_creating_state.md)
+
 ***
 
 # Books & Web-Links
