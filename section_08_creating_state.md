@@ -74,6 +74,10 @@ func (r *Request) FormFile(key string) (multipart.File, *multipart.FileHeader, e
 
 ## 57. `Enctype`
 
+* `enctype="application/x-www-form-urlencoded"`     # if a `form` contains `<input type="file">`
+* `enctype="multipart/form-data"`
+* `enctype="text/plain"`
+
 ***
 
 ## 58. Redirects - overview
