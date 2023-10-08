@@ -103,6 +103,25 @@ func Redirect(w ResponseWriter, r *Request, url string, code int)
 
 ## 61. Cookies - overview
 
+[http.SetCookie](https://pkg.go.dev/net/http#SetCookie)
+```go
+func SetCookie(w ResponseWriter, cookie *Cookie)
+```
+
+[http.Cookie](https://pkg.go.dev/net/http#Cookie)
+```go
+type Cookie struct {
+    Name    string
+    Value   string
+    Path    string    // optional
+}
+```
+
+[request.Cookie](https://pkg.go.dev/net/http#Request.Cookie)
+```go
+func (r *Request) Cookie(name string) (*Cookie, error)
+```
+
 ***
 
 ## 62. Cookies - writing and reading
