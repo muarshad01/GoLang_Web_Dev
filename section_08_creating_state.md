@@ -138,6 +138,11 @@ func (r *Request) Cookie(name string) (*Cookie, error)
 
 ## 65. Deleting a cookie
 
+* `<h1><a href="/set">set a cookie</a></h1>`
+* `<h1><a href="/read">read</a></h1>`
+* `<h1><a href="/expire">expire</a></h1>`
+
+
 ***
 
 
