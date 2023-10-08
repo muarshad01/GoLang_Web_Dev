@@ -94,6 +94,11 @@ func (r *Request) FormFile(key string) (multipart.File, *multipart.FileHeader, e
 
 ## 60. Redirects - in practice
 
+[http.Redirect](https://pkg.go.dev/net/http#Redirect)
+```go
+func Redirect(w ResponseWriter, r *Request, url string, code int)
+```
+
 ***
 
 ## 61. Cookies - overview
