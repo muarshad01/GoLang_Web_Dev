@@ -1,0 +1,36 @@
+## 66. Seccions
+
+***
+
+## 67. Universally unique identifier - UUID
+
+***
+
+## 68. Your first session
+
+***
+
+
+## 69. Sign-up
+
+***
+
+## 70. Encrypt password with `bcrypt`
+
+***
+
+## 71. Login
+
+***
+
+## 72. Logout
+
+***
+
+## 73. Permissions
+
+***
+
+## 74. Expire session
+
+***
