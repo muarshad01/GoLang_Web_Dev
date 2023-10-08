@@ -83,7 +83,7 @@ func (r *Request) FormFile(key string) (multipart.File, *multipart.FileHeader, e
 ## 58. Redirects - overview
 
 * `StatusMovedPermanently = 301`                        # RFC 9110, 15.4.2
-* `StatusSeeOther         = 303`                        # RFC 9110, 15.4.4
+* `StatusSeeOther         = 303`                        # RFC 9110, 15.4.4 - `Always GET`
 * `StatusTemporaryRedirect = 307`                       # RFC 9110, 15.4.8
 
 ***
