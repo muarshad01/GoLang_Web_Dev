@@ -68,6 +68,8 @@ func (r *Request) FormFile(key string) (multipart.File, *multipart.FileHeader, e
 
 * Note: type="file"
 
+* enctype="multipart/form-data"
+
 ***
 
 ## 57. `Enctype`
