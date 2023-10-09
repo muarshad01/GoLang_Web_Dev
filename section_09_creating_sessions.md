@@ -14,6 +14,21 @@ $ go mod tidy
 
 ## 68. Your first session
 
+```
+type User struct {
+	UserName string
+	First    string
+	Last     string
+}
+```
+
+* `Session` has `{session_id, user_id}`
+* `user_id` -> determines a unique `User`
+
+```
+var dbSessions = map[string]string{}        # composite literal
+var dbSessions = make(map[string]string)    # same effect as above
+```
 ***
 
 
