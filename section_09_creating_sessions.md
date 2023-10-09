@@ -44,6 +44,21 @@ var dbSessions = make(map[string]string)    # same effect as above
 </form>
 ```
 
+```
+$ /Users/marshad/Desktop/golang-web-dev/030_sessions/04_bcrypt
+$ go mod init 04_bcrypt
+$ go mod tidy
+```
+
+```
+$ go run *.go
+
+OR
+
+$ go build                      # Create an executable file (04_bcrypt) in the same folder
+# ./04_bcrypt
+```
+
 ***
 
 ## 70. Encrypt password with `bcrypt`
