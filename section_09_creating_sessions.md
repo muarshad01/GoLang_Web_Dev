@@ -14,7 +14,7 @@ $ go mod tidy
 
 ## 68. Your first session
 
-```
+```go
 type User struct {
 	UserName string
 	First    string
