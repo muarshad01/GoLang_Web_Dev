@@ -63,6 +63,11 @@ $ go build                      # Create an executable file (04_bcrypt) in the s
 
 ## 70. Encrypt password with `bcrypt`
 
+[bcrypt#GenerateFromPassword](https://pkg.go.dev/golang.org/x/crypto/bcrypt#GenerateFromPassword)
+```go
+func GenerateFromPassword(password []byte, cost int) ([]byte, error)
+```
+
 ***
 
 ## 71. Login
