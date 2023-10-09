@@ -81,6 +81,14 @@ func CompareHashAndPassword(hashedPassword, password []byte) error
 
 ## 72. Logout
 
+```go
+&http.Cookie{
+    Name:   "session",
+    Value:  "",
+	MaxAge: -1,                 # delete the cookie now
+}
+```
+
 ***
 
 ## 73. Permissions
