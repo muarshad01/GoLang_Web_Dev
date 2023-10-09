@@ -55,7 +55,7 @@ $ go run *.go
 
 OR
 
-$ go build                      # Create an executable file (04_bcrypt) in the same folder
+$ go build                      # This'll create an `executable` file (04_bcrypt) in the same folder
 # ./04_bcrypt
 ```
 
