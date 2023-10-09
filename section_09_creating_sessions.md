@@ -72,6 +72,11 @@ func GenerateFromPassword(password []byte, cost int) ([]byte, error)
 
 ## 71. Login
 
+[bcrypt#CompareHashAndPassword](https://pkg.go.dev/golang.org/x/crypto/bcrypt#CompareHashAndPassword)
+```go
+func CompareHashAndPassword(hashedPassword, password []byte) error
+```
+
 ***
 
 ## 72. Logout
