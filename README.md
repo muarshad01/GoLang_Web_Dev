@@ -10,6 +10,8 @@
 
 * [Section 08: Creating State](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_08_creating_state.md)
 
+* [Section 09: Creating Sessions](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_09_creating_sessions.md)
+
 ***
 
 # Books & Web-Links
