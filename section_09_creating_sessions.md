@@ -4,7 +4,7 @@
 
 ## 67. Universally unique identifier - `UUID`
 
-```
+```linux
 $ cd /Users/marshad/Desktop/golang-web-dev/030_sessions/01_uuid
 $ go mod init 01_uuid
 $ go mod tidy
@@ -34,7 +34,7 @@ var dbSessions = make(map[string]string)    # same effect as above
 
 ## 69. Sign-up
 
-```
+```html
 <form method="post">
     <input type="email" name="username"  placeholder="email">      <br>
     <input type="text"  name="password"  placeholder="password">   <br>
