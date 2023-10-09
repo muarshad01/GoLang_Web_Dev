@@ -34,6 +34,16 @@ var dbSessions = make(map[string]string)    # same effect as above
 
 ## 69. Sign-up
 
+```
+<form method="post">
+    <input type="email" name="username"  placeholder="email">      <br>
+    <input type="text"  name="password"  placeholder="password">   <br>
+    <input type="text"  name="firstname" placeholder="first name"> <br>
+    <input type="text"  name="lastname"  placeholder="last name">  <br>
+    <input type="submit">
+</form>
+```
+
 ***
 
 ## 70. Encrypt password with `bcrypt`
