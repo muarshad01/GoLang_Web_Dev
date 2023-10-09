@@ -50,7 +50,7 @@ $ go mod init 04_bcrypt
 $ go mod tidy
 ```
 
-```
+```go
 $ go run *.go
 
 OR
