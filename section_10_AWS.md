@@ -21,8 +21,11 @@
     - launch
     - create new key-pair (`kp-mm-dd-yyyy`) / download
 
-### Deploy your binary
+***
 
+## 77. Hello World on `AWS`
+
+### Deploy your binary
 ```
 $ mv [src] [dst] 
 $ mv ~/Downloads/kp-mm-dd-yyyy.pem ~/.ssh
@@ -30,13 +33,13 @@ $ mv ~/Downloads/kp-mm-dd-yyyy.pem ~/.ssh
 $ sudo chmod 400 kp-mm-dd-yyy.pem
 ```
 
-# Build hello world
+### Build Hello World
 ```
 $ cd ~/Desktop/.../032_AWS
 $ GOOS=linux GOARCH=amd64 go build -o mybinary
 ```
 
-# Copy your binary to the sever
+### Copy your binary to the sever
 ```
 $ scp -i /path/to/[your].pem ./main ec2-user@[public-DNS]:
  - "ec2-user" might be "ubuntu" depending upon your machine
@@ -48,7 +51,7 @@ $ scp -i /path/to/[your].pem ./main ec2-user@[public-DNS]:
 $ ssh -i /path/to/[your].pem ec2-user@[public-DNS]
 ```
 
-# Run your code
+### Run your code
 ```
 $ sudo yum update??
 $ sudo chmod 700 mybinary
@@ -56,25 +59,26 @@ $ sudo ./mybinary
 - check it in a browser at [public-IP]
 ```
 
-# Exit
+### Exit
 ```
   - ctrl + c
   - exit
 ```
 
-# Persisting your application
+***
+
+## 78. Persisting your application
 
 To run our application after the terminal session has ended, we must do one of the following:
 
-#Possible options
-```
-* screen
-* init.d
-* upstart
-* system.d
-```
+* Possible options
+    - screen
+    - init.d
+    - upstart
+    - system.d
 
-# `System.d`
+* `System.d`
+```
 # Create a configuration file
 $ cd /etc/systemd/system/
 $ sudo nano ```<filename>```.service
@@ -94,21 +98,27 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
+### Add the service to systemd.
 ```
-# Add the service to systemd.
 $ sudo systemctl enable ```<filename>```.service
+```
 
-# Activate the service.
+### Activate the service.
+```
 $ sudo systemctl start ```<filename>```.service
+```
 
-# Check if systemd started it.
+### Check if systemd started it.
+```
 $ sudo systemctl status ```<filename>```.service
+```
 
-# Stop systemd if so desired.
+### Stop systemd if so desired.
+```
 $ sudo systemctl stop ```<filename>```.service
 ```
 
-# Troubleshooting
+### Troubleshooting
 
 A possible issue could be that you're cross-compiling for the wrong architecture: AWS might have assigned you a different machine than the one used in this example. To solve this problem, we will install Go on the AWS machine and then run "go env" to see GOOS & GOARCH for that machine.
 
@@ -142,13 +152,6 @@ export PATH=$PATH:/home/ubuntu/go/bin
 
 Sometimes students miss setting port openings in security. If you are having issues, check to make sure these settings are correct - and please note, you IP address for SSH will either be 0.0.0.0/0 or something different than mine.
 ![](security.png)
-***
-
-## 77. Hello world on `AWS`
-
-***
-
-## 78. Persisting an application
 
 ***
 
