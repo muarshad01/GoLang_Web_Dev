@@ -6,7 +6,7 @@
 
 ### Create an instance
 
-* Create an `AWS Account`
+* Create an `AWS` Account
     - Enter Credit Card info
 
 * `aws.amazon.com` -> My Account -> `AWS Management Console` 
@@ -30,44 +30,64 @@
 ### Deploy your binary
 
 ```
-$ mv ~/Downloads/kp-mm-dd-yyyy.pem ~/.ssh
+$ mv ~/Desktop/kp-mm-dd-yyyy.pem ~/.ssh
 ```
 
 ```
-$ sudo chmod 400 kp-mm-dd-yyy.pem
+$ sudo chmod 400 kp-mm-dd-yyy.pem                   # -r--|---|---
 ```
 
-### Build Hello World
+### Build hello world
+
 ```
-$ cd ~/Desktop/.../032_AWS
-$ GOOS=linux GOARCH=amd64 go build -o mybinary
+$ /Users/marshad/Desktop/golang-web-dev/031_aws/01_hello
+
+$ go env
+$ go help build
+
+$ go mod init 01_hello
+$ go mod tidy
+$ GOOS=linux GOARCH=amd64 go build -o mybinary              # `-o` flag: put the binary to a particular name
 ```
 
 ### Copy your binary to the sever
+
 ```
-$ scp -i /path/to/[your].pem ./main ec2-user@[public-DNS]:
- - "ec2-user" might be "ubuntu" depending upon your machine
+$ scp -i ~/.ssh/kp-10-10-2023.pem mybinary ubuntu@[public-IPv4-DNS]:              # There is a `:` at the end
+```
+
+* `ec2-user` might be `ubuntu` depending upon your machine
  - say "yes" to The authenticity of host ... can't be established.
-```
 
 ### SSH into your server
 
 ```
-$ ssh -i /path/to/[your].pem ec2-user@[public-DNS]
+$ ssh -i ~/.ssh/kp-10-10-2023.pem ubuntu@[public-IPv4-DNS]
 ```
 
-### Run your code
 ```
-$ sudo yum update??
+$ hostname
+```
+* Private IPv4 addresses: 172.31.37.108
+
+```
+$ whoami
+```
+* `ubuntu`
+
+### Run your code
+
+```
 $ sudo chmod 700 mybinary
 $ sudo ./mybinary
 - check it in a browser at [public-IP]
 ```
 
 ### Exit
+
 ```
-  - ctrl + c
-  - exit
+- ctrl + c
+- exit
 ```
 
 ***
@@ -78,9 +98,9 @@ To run our application after the terminal session has ended, we must do one of t
 
 * Possible options
     - screen
-    - init.d
+    - `init.d`
     - upstart
-    - system.d
+    - `system.d`
 
 * `System.d`
 
