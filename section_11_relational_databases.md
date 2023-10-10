@@ -6,6 +6,7 @@
 
 ### Install MySQL
  - [Download MySQL Community Server](http://dev.mysql.com/downloads/)
+ - MySQL Community (GPL) Downloads »
 
 ### MySQL driver
   - go get github.com/go-sql-driver/mysql
@@ -29,6 +30,8 @@
 ***
 
 ## 84. Installing MySQL - AWS
+
+* `RDS`
 
 ***
 
