@@ -106,7 +106,7 @@ To run our application after the terminal session has ended, we must do one of t
     - upstart
     - `system.d`
 
-* `System.d`
+### `System.d`
 
 ```
 # Create a configuration file
