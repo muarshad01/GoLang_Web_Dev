@@ -257,8 +257,8 @@ $ cd /Users/marshad/Desktop/golang-web-dev/030_sessions/08_expire-sessio
   Description=Go Server
 
   [Service]
-  ExecStart=/home/ubuntu/cowboy
-  WorkingDirectory=/home/ubuntu
+  ExecStart=/home/ubuntu/wildwest/cowboy
+  WorkingDirectory=/home/ubuntu/wildwest
   User=root
   Group=root
   Restart=always
