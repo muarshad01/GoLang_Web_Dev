@@ -7,9 +7,10 @@
 ### Create an instance
 
 * Create an `AWS Account`
- - enter credit card info
+    - Enter Credit Card info
 
-* Sign into console
+* `aws.amazon.com` -> My Account -> `AWS Management Console` 
+    - Login / Password -> Sign in using alternative factors of authentication
 
 * 1. Create a new `EC2` instance
     - services / EC2
