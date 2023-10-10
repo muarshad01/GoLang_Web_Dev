@@ -272,4 +272,5 @@ $ cd /Users/marshad/Desktop/golang-web-dev/030_sessions/08_expire-sessio
 
 ## 81. Terminating `AWS` services
 
+Instance state -> terminate
 ***
