@@ -167,7 +167,7 @@ export PATH=$PATH:/home/ubuntu/go/bin
   - go env
 ```
 
-# Troubleshooting
+### Troubleshooting
 
 Sometimes students miss setting port openings in security. If you are having issues, check to make sure these settings are correct - and please note, you IP address for SSH will either be 0.0.0.0/0 or something different than mine.
 ![](security.png)
