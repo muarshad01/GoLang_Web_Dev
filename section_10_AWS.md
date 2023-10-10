@@ -12,15 +12,16 @@
 * `aws.amazon.com` -> My Account -> `AWS Management Console` 
     - Login / Password -> Sign in using alternative factors of authentication
 
-* 1. Create a new `EC2` instance
-    - services / EC2
-    - `Launch Instance`
-    - choose your instance (`t2.micro`)
-    - add storage / 30GB free 
-    - add tags / web-server-mm-dd-yyyy
-    - security / ssh / http
-    - launch
-    - create new key-pair (`kp-mm-dd-yyyy`) / download
+* Create a new `EC2` instance
+    - `Services` -> `EC2`
+    - Instances -> `Launch Instances`
+    - Application and OS Images (AMI) -> Quick Start -> `Ubntu` -> Free tier eligible
+    - Instance type (`t2.micro`)
+    - Configure storage / 8GB free 
+    - Name add tags / web-server-mm-dd-yyyy (`web-server-10-12-2023`)
+    - Create security group/ SSH / HTTP
+    - Create key pair (`kp-mm-dd-yyyy`) / Download
+    - Launch
 
 ***
 
