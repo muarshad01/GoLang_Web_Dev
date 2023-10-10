@@ -129,28 +129,11 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
-### Add the service to systemd.
-
 ```
 $ sudo systemctl enable ```<filename>```.service
-```
-
-### Activate the service.
-
-```
-$ sudo systemctl start ```<filename>```.service
-```
-
-### Check if systemd started it.
-
-```
+$ sudo systemctl start  ```<filename>```.service
 $ sudo systemctl status ```<filename>```.service
-```
-
-### Stop systemd if so desired.
-
-```
-$ sudo systemctl stop ```<filename>```.service
+$ sudo systemctl stop   ```<filename>```.service
 ```
 
 ### Troubleshooting
@@ -177,7 +160,7 @@ $ sudo systemctl stop ```<filename>```.service
 
 ```
 * add environment variables
-    - nano .bashrc
+    - $ vim ~/.bashrc
 
 export GOROOT=/home/ubuntu/go
 export GOPATH=/home/ubuntu/goworkspace
@@ -187,16 +170,17 @@ export PATH=$PATH:/home/ubuntu/go/bin
 
 ```
 * refresh environment variables
-  - source ~/.bashrc
+  - $ source ~/.bashrc
 * confirm installation
-  - go version
+  - $ go version
 * get machine GOOS & GOARCH info
-  - go env
+  - $ go env
 ```
 
 ### Troubleshooting
 
-Sometimes students miss setting port openings in security. If you are having issues, check to make sure these settings are correct - and please note, you IP address for SSH will either be 0.0.0.0/0 or something different than mine.
+* Sometimes students miss setting port openings in security. 
+* If you are having issues, check to make sure these settings are correct - and please note, you IP address for SSH will either be `0.0.0.0/0` or something different than mine.
 ![](security.png)
 
 ***
