@@ -75,6 +75,10 @@ $ whoami
 ```
 * `ubuntu`
 
+```
+$ uname -a
+```
+
 ### Run your code
 
 ```
@@ -107,7 +111,8 @@ To run our application after the terminal session has ended, we must do one of t
 ```
 # Create a configuration file
 $ cd /etc/systemd/system/
-$ sudo nano ```<filename>```.service
+$ sudo touch anynamewewant.service
+$ sudo vim   anynamewewant.service
 ```
 
 ```
