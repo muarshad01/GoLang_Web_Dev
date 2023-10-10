@@ -12,6 +12,8 @@
 
 * [Section 09: Creating Sessions](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_09_creating_sessions.md)
 
+* [Section 10: AWS](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_10_AWS.md)
+
 ***
 
 # Books & Web-Links
