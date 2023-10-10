@@ -125,7 +125,7 @@ A possible issue could be that you're cross-compiling for the wrong architecture
   - cd ../
 1. add environment variables
   - nano .bashrc
-```
+
 export GOROOT=/home/ubuntu/go
 export GOPATH=/home/ubuntu/goworkspace
 export PATH=$PATH:/home/ubuntu/goworkspace/bin
