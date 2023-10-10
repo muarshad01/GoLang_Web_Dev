@@ -120,26 +120,36 @@ $ sudo systemctl stop ```<filename>```.service
 
 ### Troubleshooting
 
-A possible issue could be that you're cross-compiling for the wrong architecture: AWS might have assigned you a different machine than the one used in this example. To solve this problem, we will install Go on the AWS machine and then run "go env" to see GOOS & GOARCH for that machine.
+* A possible issue could be that you're cross-compiling for the wrong architecture: AWS might have assigned you a different machine than the one used in this example. 
+* To solve this problem, we will install `Go` on the AWS machine and then run `go env` to see `GOOS` & `GOARCH` for that machine.
 
-1. download Go
-  - wget https://storage.googleapis.com/golang/go1.7.4.linux-amd64.tar.gz
-1. unpack go
-  - tar -xzf go1.7.4.linux-amd64.tar.gz
-1. remove the tar file
-  - rm -rf go1.7.4.linux-amd64.tar.gz
-1. make your go workspace
-  - mkdir goworkspace
-  - cd gowoworkspace
-  - mkdir bin pkg src
-  - cd ../
-1. add environment variables
-  - nano .bashrc
+```
+* download Go
+    - wget https://storage.googleapis.com/golang/go1.7.4.linux-amd64.tar.gz
+
+* unpack go
+    - tar -xzf go1.7.4.linux-amd64.tar.gz
+
+* remove the tar file
+    - rm -rf go1.7.4.linux-amd64.tar.gz
+
+* make your go workspace
+    - mkdir goworkspace
+    - cd gowoworkspace
+    - mkdir bin pkg src
+    - cd ../
+```
+
+```
+* add environment variables
+    - nano .bashrc
 
 export GOROOT=/home/ubuntu/go
 export GOPATH=/home/ubuntu/goworkspace
 export PATH=$PATH:/home/ubuntu/goworkspace/bin
 export PATH=$PATH:/home/ubuntu/go/bin
+```
+
 ```
 1. refresh environment variables
   - source ~/.bashrc
@@ -147,6 +157,7 @@ export PATH=$PATH:/home/ubuntu/go/bin
   - go version
 1. get machine GOOS & GOARCH info
   - go env
+```
 
 # Troubleshooting
 
