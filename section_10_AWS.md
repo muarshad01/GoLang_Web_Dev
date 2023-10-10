@@ -151,11 +151,11 @@ export PATH=$PATH:/home/ubuntu/go/bin
 ```
 
 ```
-1. refresh environment variables
+* refresh environment variables
   - source ~/.bashrc
-1. confirm installation
+* confirm installation
   - go version
-1. get machine GOOS & GOARCH info
+* get machine GOOS & GOARCH info
   - go env
 ```
 
