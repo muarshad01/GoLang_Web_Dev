@@ -23,50 +23,69 @@
 
 ### Deploy your binary
 
-1.
-  - mv [src] [dst] / sudo chmod 400 your.pem
+```
+$ mv [src] [dst] 
+$ mv ~/Downloads/kp-mm-dd-yyyy.pem ~/.ssh
 
-1. Build hello world
-  - GOOS=linux GOARCH=amd64 go build
+$ sudo chmod 400 kp-mm-dd-yyy.pem
+```
 
-1. Copy your binary to the sever
-  - scp -i /path/to/[your].pem ./main ec2-user@[public-DNS]:
-    - "ec2-user" might be "ubuntu" depending upon your machine
-  - say "yes" to The authenticity of host ... can't be established.
+# Build hello world
+```
+$ cd ~/Desktop/.../032_AWS
+$ GOOS=linux GOARCH=amd64 go build -o mybinary
+```
 
-1. SSH into your server
-  - ssh -i /path/to/[your].pem ec2-user@[public-DNS]
+# Copy your binary to the sever
+```
+$ scp -i /path/to/[your].pem ./main ec2-user@[public-DNS]:
+ - "ec2-user" might be "ubuntu" depending upon your machine
+ - say "yes" to The authenticity of host ... can't be established.
+```
 
-1. Run your code
-  - sudo chmod 700 mybinary
-  - sudo ./mybinary
-  - check it in a browser at [public-IP]
+# SSH into your server
+```
+$ ssh -i /path/to/[your].pem ec2-user@[public-DNS]
+```
 
-1. Exit
+# Run your code
+```
+$ sudo yum update??
+$ sudo chmod 700 mybinary
+$ sudo ./mybinary
+- check it in a browser at [public-IP]
+```
+
+# Exit
+```
   - ctrl + c
   - exit
+```
 
 # Persisting your application
 
 To run our application after the terminal session has ended, we must do one of the following:
 
-## Possible options
-1. screen
-1. init.d
-1. upstart
-1. system.d
+#Possible options
+```
+* screen
+* init.d
+* upstart
+* system.d
+```
 
-## System.d
-1. Create a configuration file
-  - cd /etc/systemd/system/
-  - sudo nano ```<filename>```.service
+# `System.d`
+# Create a configuration file
+$ cd /etc/systemd/system/
+$ sudo nano ```<filename>```.service
+```
 
 ```
 [Unit]
 Description=Go Server
 
 [Service]
-ExecStart=/home/<username>/<exepath>
+ExecStart=/home/<username>/<exepath>            # /home/ubuntu/mybinary
 User=root
 Group=root
 Restart=always
@@ -75,15 +94,19 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
-1. Add the service to systemd.
-  - sudo systemctl enable ```<filename>```.service
-1. Activate the service.
-  - sudo systemctl start ```<filename>```.service
-1. Check if systemd started it.
-  - sudo systemctl status ```<filename>```.service
-1. Stop systemd if so desired.
-  - sudo systemctl stop ```<filename>```.service
+```
+# Add the service to systemd.
+$ sudo systemctl enable ```<filename>```.service
 
+# Activate the service.
+$ sudo systemctl start ```<filename>```.service
+
+# Check if systemd started it.
+$ sudo systemctl status ```<filename>```.service
+
+# Stop systemd if so desired.
+$ sudo systemctl stop ```<filename>```.service
+```
 
 # Troubleshooting
 
