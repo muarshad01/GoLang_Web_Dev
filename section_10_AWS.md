@@ -7,7 +7,7 @@
 ### Create an instance
 
 * Create an `AWS Account`
-    - enter credit card info
+ - enter credit card info
 
 * Sign into console
 
@@ -26,10 +26,12 @@
 ## 77. Hello World on `AWS`
 
 ### Deploy your binary
-```
-$ mv [src] [dst] 
-$ mv ~/Downloads/kp-mm-dd-yyyy.pem ~/.ssh
 
+```
+$ mv ~/Downloads/kp-mm-dd-yyyy.pem ~/.ssh
+```
+
+```
 $ sudo chmod 400 kp-mm-dd-yyy.pem
 ```
 
@@ -46,7 +48,8 @@ $ scp -i /path/to/[your].pem ./main ec2-user@[public-DNS]:
  - say "yes" to The authenticity of host ... can't be established.
 ```
 
-# SSH into your server
+### SSH into your server
+
 ```
 $ ssh -i /path/to/[your].pem ec2-user@[public-DNS]
 ```
@@ -78,6 +81,7 @@ To run our application after the terminal session has ended, we must do one of t
     - system.d
 
 * `System.d`
+
 ```
 # Create a configuration file
 $ cd /etc/systemd/system/
@@ -99,21 +103,25 @@ WantedBy=multi-user.target
 ```
 
 ### Add the service to systemd.
+
 ```
 $ sudo systemctl enable ```<filename>```.service
 ```
 
 ### Activate the service.
+
 ```
 $ sudo systemctl start ```<filename>```.service
 ```
 
 ### Check if systemd started it.
+
 ```
 $ sudo systemctl status ```<filename>```.service
 ```
 
 ### Stop systemd if so desired.
+
 ```
 $ sudo systemctl stop ```<filename>```.service
 ```
