@@ -227,7 +227,7 @@ $ cd /Users/marshad/Desktop/golang-web-dev/030_sessions/08_expire-sessio
   1. Create a configuration file
     - sudo nano /etc/systemd/system/```<filename>```.service
 
-  ```
+  ---
   [Unit]
   Description=Go Server
 
@@ -240,7 +240,7 @@ $ cd /Users/marshad/Desktop/golang-web-dev/030_sessions/08_expire-sessio
 
   [Install]
   WantedBy=multi-user.target
-  ```
+  ---
 
   1. Add the service to systemd.
     - sudo systemctl enable ```<filename>```.service
