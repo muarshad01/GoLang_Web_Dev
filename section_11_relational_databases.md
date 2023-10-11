@@ -90,4 +90,11 @@ $ go run main.go
 
 ## 87. Go & SQL - In Practice
 
+```
+$ cd /Users/marshad/Desktop/golang-web-dev/032_rdbms/02_SQL
+$ go mod init 02_SQL
+$ go mod tidy
+
+$ go run main.go
+```
 ***
