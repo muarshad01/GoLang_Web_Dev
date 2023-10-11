@@ -63,17 +63,22 @@ mysql> show databases;
 
 ***
 
-## 84. Installing MySQL - AWS
+## 84. Installing `MySQL` - `AWS`
 
-* `RDS`
+* `Services` -> `RDS`
 
 ***
 
-## 85. Connect Workbench to MySQL on AWS
+## 85. Connect Workbench to `MySQL` on `AWS`
 
 ***
 
 ## 86. Go & SQL - Setup
+
+* `godoc.org` -> search `sql`
+
+* [SQL Drivers](https://github.com/golang/go/wiki/SQLDrivers)
+* [Example Usage Patterns](https://github.com/golang/go/wiki/SQLInterface)
 
 ***
 
