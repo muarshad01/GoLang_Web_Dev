@@ -16,8 +16,6 @@
 
 * [Section 11: RDBMS](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_11_relational_databases.md)
 
-section_11_relational_databases.md
-
 ***
 
 # Books & Web-Links
