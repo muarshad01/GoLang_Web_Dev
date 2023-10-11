@@ -72,6 +72,7 @@ mysql> show databases;
 
 * [SQL Drivers](https://github.com/golang/go/wiki/SQLDrivers)
 * [Example Usage Patterns](https://github.com/golang/go/wiki/SQLInterface)
+    - [Astaxie's book](https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/05.2.html)
 
 ```
 $ cd /Users/marshad/Desktop/golang-web-dev/032_rdbms/01_connect
