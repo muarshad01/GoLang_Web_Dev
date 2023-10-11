@@ -46,14 +46,18 @@ mysql> show databases;
 
 * `aws.amazon.com` -> My Account -> `AWS Management Console` 
 
-* `Services` -> `RDS`
-
-* `Choose a database creation method` -> `Easy Create`    
-    - `Databases` -> `Create database` -> `MySQL`
-    - `MySQL Community`    
-    - `DB instance size` -> `Dev/Test`
-    - DB instance identifier (database-1; admin; 1-8#)
+* `Services` -> `RDS` -> `Create database`
+    - `Choose a database creation method` -> `Standard Create`    
+    - `Engine options` -> `MySQL`
+    - `Edition` -> `MySQL Community`    
+    - `Engine Version` -> `MySQL 8.0.33` 
+    - `Templates` -> `Dev/Test`
     - `Availability and durability` -> `Single DB Instance`
+    - `Settings`(database-1; admin; 1-8#)
+    - `Instance configuration` -> Burstable classes(`db.t3.micro`)
+    - `Storage` -> gp2(10)
+    - `Connectivity` -> All default; public access (YES); VPC security group: Create new -> `test-db-group`
+    - 
 
 ***
 
