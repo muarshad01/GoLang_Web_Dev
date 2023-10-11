@@ -103,6 +103,11 @@ $ go mod tidy
 $ go run main.go
 ```
 
+```
+// db, err = sql.Open("mysql", "user   :password  @tcp(localhost                                            :5555)/dbname?charset=utf8")
+// db, err = sql.Open("mysql", "awsuser:mypassword@tcp(mydbinstance.cakwl95bxza0.us-west-1.rds.amazonaws.com:3306)/test02?charset=utf8")
+```
+
 ***
 
 ## 87. Go & SQL - In Practice
