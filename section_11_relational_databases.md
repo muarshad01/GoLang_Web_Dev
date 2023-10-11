@@ -11,6 +11,18 @@ $ mysql
 $ mysql -u root -p
 ```
 
+```
+$ vim ~/.bash_profile
+
+export PATH=$PATH:/usr/local/mysql/bin
+
+$ source ~/.bash_profile 
+```
+
+```
+$ mysql -u root -p
+```
+
 ### Install `MySQL`
 
 * [MySQL Community Downloads](https://dev.mysql.com/downloads/mysql/)
