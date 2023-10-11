@@ -66,28 +66,6 @@ mysql> show databases;
 
 ***
 
-
-### MySQL driver
-  - go get github.com/go-sql-driver/mysql
-  - [read the documentation](https://github.com/go-sql-driver/mysql#installation)
-  - [see all SQL drivers](https://github.com/golang/go/wiki/SQLDrivers)
-  - [Astaxie's book](https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/05.2.html)
-
-### Include the driver in your imports
-  - _ "github.com/go-sql-driver/mysql"
-  - [Read the documentation](https://github.com/go-sql-driver/mysql#usage)
-
-### Determine the Data Source Name
-  - user:password@tcp(localhost:5555)/dbname?charset=utf8
-  - [Read the documentation](https://github.com/go-sql-driver/mysql#dsn-data-source-name)
-
-### Open a connection
-  - db, err := sql.Open("mysql", "user:password@tcp(localhost:5555)/dbname?charset=utf8")
-
-[package sql](https://godoc.org/database/sql)
-
-***
-
 ## 86. Go & SQL - Setup
 
 * `godoc.org` -> search `sql`
@@ -104,6 +82,7 @@ $ go run main.go
 ```
 
 ```
+// [username[:password]@][protocol[(address)]]/dbname[?param1=value1&...&paramN=valueN]
 // db, err = sql.Open("mysql", "user   :password  @tcp(localhost                                            :5555)/dbname?charset=utf8")
 // db, err = sql.Open("mysql", "awsuser:mypassword@tcp(mydbinstance.cakwl95bxza0.us-west-1.rds.amazonaws.com:3306)/test02?charset=utf8")
 ```
