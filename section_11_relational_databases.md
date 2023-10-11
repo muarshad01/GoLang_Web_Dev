@@ -4,7 +4,13 @@
 
 ## 83. Installing MySQL - Locally
 
+```
+$ mysql
+$ mysql -u root -p
+```
+
 ### Install `MySQL`
+
 * [MySQL Community Downloads](https://dev.mysql.com/downloads/mysql/)
     - No thanks, just start my download.
 
