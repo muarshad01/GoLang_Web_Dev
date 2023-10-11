@@ -4,26 +4,15 @@
 
 ## 83. Installing MySQL - Locally
 
-* (How To Download And Install MYSQL Server In Macbook M1](https://www.youtube.com/watch?v=aWZKws7RWic)
+* [How To Download And Install MYSQL Server In Macbook M1](https://www.youtube.com/watch?v=aWZKws7RWic)
 
+### Check if `MySQL` is installed
 ```
 $ mysql
 $ mysql -u root -p
 ```
 
-```
-$ vim ~/.bash_profile
-
-export PATH=$PATH:/usr/local/mysql/bin
-
-$ source ~/.bash_profile 
-```
-
-```
-$ mysql -u root -p
-```
-
-### Install `MySQL`
+### Install `MySQL` & `MySQL Workbench`
 
 * [MySQL Community Downloads](https://dev.mysql.com/downloads/mysql/)
     - No thanks, just start my download.
@@ -34,6 +23,21 @@ $ mysql -u root -p
     - No thanks, just start my download.
 
 * Apple -> System Preferences -> search `mysql`
+
+### `MySQL` access through command-line
+
+```
+$ vim ~/.bash_profile
+
+export PATH=$PATH:/usr/local/mysql/bin
+
+$ source ~/.bash_profile
+```
+$ mysql -u root -p
+
+mysql> show databases;
+```
+***
 
 ### MySQL driver
   - go get github.com/go-sql-driver/mysql
