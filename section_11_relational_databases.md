@@ -6,13 +6,14 @@
 
 * [How To Download And Install MYSQL Server In Macbook M1](https://www.youtube.com/watch?v=aWZKws7RWic)
 
-### Check if `MySQL` is installed
+* Check if `MySQL` is installed
+
 ```
 $ mysql
 $ mysql -u root -p
 ```
 
-### Install `MySQL` & `MySQL Workbench`
+* Install `MySQL` & `MySQL Workbench`
 
 * [MySQL Community Downloads](https://dev.mysql.com/downloads/mysql/)
     - No thanks, just start my download.
@@ -24,13 +25,15 @@ $ mysql -u root -p
 
 * Apple -> System Preferences -> search `mysql`
 
-### `MySQL` access through command-line
+* `MySQL` access through command-line
 
 ```
 $ vim ~/.bash_profile
 
-export PATH=$PATH:/usr/local/mysql/bin
+export PATH=$PATH:/usr/local/mysql/bin              # Add to .bash_profile
+```
 
+```
 $ source ~/.bash_profile
 ```
 
@@ -39,7 +42,6 @@ $ mysql -u root -p
 
 mysql> show databases;
 ```
-
 ***
 
 ## 84. Installing `MySQL` - `AWS`
@@ -53,16 +55,14 @@ mysql> show databases;
     - `Engine Version` -> `MySQL 8.0.33` 
     - `Templates` -> `Dev/Test`
     - `Availability and durability` -> `Single DB Instance`
-    - `Settings`(database-1; admin; 1-8#)
+    - `Settings`(test-db; admin; 1-8#)
     - `Instance configuration` -> Burstable classes(`db.t3.micro`)
     - `Storage` -> gp2(10)
     - `Connectivity` -> All default; public access (YES); VPC security group: Create new -> `test-db-group`
     - 
-
 ***
 
 ## 85. Connect Workbench to `MySQL` on `AWS`
-
 
 ***
 
