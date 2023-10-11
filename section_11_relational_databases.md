@@ -5,8 +5,8 @@
 ## 83. Installing MySQL - Locally
 
 ### Install MySQL
- - [Download MySQL Community Server](http://dev.mysql.com/downloads/)
- - MySQL Community (GPL) Downloads »
+- [MySQL Community Downloads](https://dev.mysql.com/downloads/mysql/)
+- No thanks, just start my download.
 
 ### MySQL driver
   - go get github.com/go-sql-driver/mysql
