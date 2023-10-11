@@ -4,6 +4,8 @@
 
 ## 83. Installing MySQL - Locally
 
+* (How To Download And Install MYSQL Server In Macbook M1](https://www.youtube.com/watch?v=aWZKws7RWic)
+
 ```
 $ mysql
 $ mysql -u root -p
@@ -13,6 +15,13 @@ $ mysql -u root -p
 
 * [MySQL Community Downloads](https://dev.mysql.com/downloads/mysql/)
     - No thanks, just start my download.
+    - Use Strong Password Encryption -> Next
+    - Please enter a password for the "root" user: `1-8#`
+
+* [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
+    - No thanks, just start my download.
+
+* Apple -> System Preferences -> search `mysql`
 
 ### MySQL driver
   - go get github.com/go-sql-driver/mysql
