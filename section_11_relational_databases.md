@@ -57,6 +57,10 @@ mysql> show databases;
 
 ***
 
+## 85. Connect Workbench to `MySQL` on `AWS`
+
+
+***
 
 
 ### MySQL driver
@@ -77,16 +81,6 @@ mysql> show databases;
   - db, err := sql.Open("mysql", "user:password@tcp(localhost:5555)/dbname?charset=utf8")
 
 [package sql](https://godoc.org/database/sql)
-
-***
-
-## 84. Installing `MySQL` - `AWS`
-
-* `Services` -> `RDS`
-
-***
-
-## 85. Connect Workbench to `MySQL` on `AWS`
 
 ***
 
