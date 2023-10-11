@@ -42,6 +42,23 @@ mysql> show databases;
 
 ***
 
+## 84. Installing `MySQL` - `AWS`
+
+* `aws.amazon.com` -> My Account -> `AWS Management Console` 
+
+* `Services` -> `RDS`
+
+* `Choose a database creation method` -> `Easy Create`    
+    - `Databases` -> `Create database` -> `MySQL`
+    - `MySQL Community`    
+    - `DB instance size` -> `Dev/Test`
+    - DB instance identifier (database-1; admin; 1-8#)
+    - `Availability and durability` -> `Single DB Instance`
+
+***
+
+
+
 ### MySQL driver
   - go get github.com/go-sql-driver/mysql
   - [read the documentation](https://github.com/go-sql-driver/mysql#installation)
@@ -79,6 +96,14 @@ mysql> show databases;
 
 * [SQL Drivers](https://github.com/golang/go/wiki/SQLDrivers)
 * [Example Usage Patterns](https://github.com/golang/go/wiki/SQLInterface)
+
+```
+$ cd /Users/marshad/Desktop/golang-web-dev/032_rdbms/01_connect
+$ go mod init 01_connect
+$ go mod tidy
+
+$ go run main.go
+```
 
 ***
 
