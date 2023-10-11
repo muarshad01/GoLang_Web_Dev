@@ -33,10 +33,13 @@ export PATH=$PATH:/usr/local/mysql/bin
 
 $ source ~/.bash_profile
 ```
+
+```
 $ mysql -u root -p
 
 mysql> show databases;
 ```
+
 ***
 
 ### MySQL driver
