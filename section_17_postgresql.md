@@ -71,7 +71,7 @@ CREATE DATABASE employees;
 ```
 
 * switch back to `postgres` database
-```
+```sql
 \c postgres
 ```
 
@@ -86,7 +86,7 @@ SELECT current_database();
 ```
 
 * drop (remove, delete) database
-```
+```sql
 DROP DATABASE <database name>;
 ```
 
