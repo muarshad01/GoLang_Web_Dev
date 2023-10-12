@@ -1,10 +1,8 @@
 ## 131. Installing `Postgres`
 
 * [How to Install PostgreSql in Mac M1/M2](https://www.youtube.com/watch?v=fwPR-PCY0h8)
-    
     - `postgresql.org` -> Download -> `macOS` -> `Postgres.app` -> `Postgres.app with PostgreSQL 16 (Universal)` -> Download
-    
-    - search 'Postgres' -> Initialize (marshad, postgres, template1)
+    - search 'Postgres' -> Initialize (`marshad`, `postgres`, `template1`)
     - click `marshad`
 
 ```
