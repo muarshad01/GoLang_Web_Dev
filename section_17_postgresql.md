@@ -94,6 +94,47 @@ DROP DATABASE <database name>;
 
 ## 133. Create Table
 
+* create table
+```sql
+CREATE TABLE employees (
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   RANK           INT     NOT NULL,
+   ADDRESS        CHAR(50),
+   SALARY         REAL DEFAULT 25500.00,
+   BDAY			  DATE DEFAULT '1900-01-01'
+);
+```
+
+* show tables in a database (list down)
+```sql
+\d
+```
+
+* show details of a table
+```sql
+\d <table name>
+```
+
+* drop a table
+```sql
+DROP TABLE <table name>;
+```
+
+### schema
+
+* Schemas allow us to organize our database and database code.
+
+* A schema is like a folder.
+
+* Into this folder, you can put tables, views, indexes, sequences, data types, operators, and functions. 
+
+* Unlike folders, however, schemas can't be nested.
+
+* Schemas provide `namespacing`.
+
+[Read more about schemas](https://www.tutorialspoint.com/postgresql/postgresql_schema.htm)
+
 ***
 
 ## 134. Insert Records
