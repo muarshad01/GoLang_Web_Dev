@@ -1,7 +1,8 @@
 ## 131. Installing `Postgres`
 
 * [How to Install PostgreSql in Mac M1/M2](https://www.youtube.com/watch?v=fwPR-PCY0h8)
-    - `postgresql.org` -> Download -> `macOS` -> `Postgres.app` -> `Postgres.app with PostgreSQL 16 (Universal)` -> Download
+
+* `postgresql.org` -> Download -> `macOS` -> `Postgres.app` -> `Postgres.app with PostgreSQL 16 (Universal)` -> Download
     - search 'Postgres' -> Initialize (`marshad`, `postgres`, `template1`)
     - click `marshad`
 
@@ -11,11 +12,16 @@ You are connected to database "marshad" as user "marshad" via socket in "/tmp" a
 marshad-# \q 
 ```
 
-* Configure your $PATH to use the included command line tools (optional):
+* Configure your `$PATH` to use the included command line tools (optional):
 ```
 $ sudo mkdir -p /etc/paths.d &&
 $ echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
 $ exit
+```
+OR
+
+```
+$ /Applications/Postgres.app/Contents/Versions/latest/bin/psql -p5432
 ```
 
 ```
@@ -28,6 +34,8 @@ marshad=#
 
 ```
 marshad=# \list
+OR
+marshad=# \
 ```
 
 ```
@@ -38,7 +46,7 @@ marshad=# \c billingdb
 You are now connected to database "billingdb" as user "marshad".
 billingdb=#
 
-billingdb=# exit
+billingdb=# \q
 marshad@marshad-ltmnwup ~ %
 ```
 
