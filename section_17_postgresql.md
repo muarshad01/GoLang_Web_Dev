@@ -54,6 +54,42 @@ marshad@marshad-ltmnwup ~ %
 
 ## 132. Creating Database
 
+#  create database
+```
+CREATE DATABASE employees;
+```
+
+## list databases
+```
+\l
+```
+
+## connect to a database
+
+```sql
+\c <database name>                  # `c` - choose
+```
+
+* switch back to `postgres` database
+```
+\c postgres
+```
+
+* see `current_user`
+```
+SELECT current_user;
+```
+
+* see `current_database()`
+```
+SELECT current_database();
+```
+
+* drop (remove, delete) database
+```
+DROP DATABASE <database name>;
+```
+
 ***
 
 ## 133. Create Table
