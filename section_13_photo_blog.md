@@ -1,0 +1,44 @@
+## 96. Starting Files
+
+***
+
+## 97. User Data
+
+***
+
+## 98. Storing Multiple Values
+
+***
+
+## 99. Uploading Pictures
+
+```html
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INDEX</title>
+</head>
+
+<body>
+
+<h1>Cookie Values:</h1>
+{{range .}}
+<h2>{{.}}</h2>
+{{end}}
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="nf">
+    <input type="submit">
+</form>
+
+</body>
+</html>
+```
+
+***
+
+## 100. Displaying Pictures
+
+***
