@@ -169,6 +169,33 @@ INSERT INTO employees (ID, NAME, RANK, ADDRESS, SALARY, BDAY) VALUES (4, 'Jasmin
 
 ## 135. Auto Increment Primary Key
 
+### auto increment key field
+
+* Instead of creating a unique ID number ourselves, we can have postgres automatically increment this ID field.
+ 
+* To do this we use the data types `smallserial`, `serial` or `bigserial` (not true types but for convenience).
+ 
+* This is like AUTO_INCREMENT in other databases.
+
+```sql
+CREATE TABLE phonenumbers(
+    ID  SERIAL PRIMARY KEY,
+	PHONE           TEXT      NOT NULL
+);
+```
+
+```sql
+INSERT INTO phonenumbers (PHONE) VALUES ( '234-432-5234'), ('543-534-6543'), ('312-123-5432');
+```
+
+```sql
+\d phonenumbers                     # `d` - display
+```
+
+```sql
+SELECT * FROM phonenumbers;
+```
+
 ***
 
 ## 136. Hands-on Exercise
