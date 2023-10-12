@@ -54,17 +54,17 @@ marshad@marshad-ltmnwup ~ %
 
 ## 132. Creating Database
 
-#  create database
-```
+* create database
+```sql
 CREATE DATABASE employees;
 ```
 
-## list databases
-```
+* list databases
+```sql
 \l
 ```
 
-## connect to a database
+* connect to a database
 
 ```sql
 \c <database name>                  # `c` - choose
@@ -76,12 +76,12 @@ CREATE DATABASE employees;
 ```
 
 * see `current_user`
-```
+```sql
 SELECT current_user;
 ```
 
 * see `current_database()`
-```
+```sql
 SELECT current_database();
 ```
 
