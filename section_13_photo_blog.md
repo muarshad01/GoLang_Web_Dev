@@ -52,7 +52,7 @@ func index(w http.ResponseWriter, req *http.Request) {
 		// create sha for file name
 		ext := strings.Split(fh.Filename, ".")[1]
 		h := sha1.New()
-		io.Copy(h, mf)
+		io.Copy(h, mf)                                          # io.Copy(dst, src)
 		fname := fmt.Sprintf("%x", h.Sum(nil)) + "." + ext
 
 		// create new file
@@ -69,7 +69,7 @@ func index(w http.ResponseWriter, req *http.Request) {
 
 		// copy
 		mf.Seek(0, 0)
-		io.Copy(nf, mf)
+		io.Copy(nf, mf)                                         # copy multi-part file (mf) to single-file (nf)
 
 		// add filename to this user's cookie
 		c = appendValue(w, c, fname)
