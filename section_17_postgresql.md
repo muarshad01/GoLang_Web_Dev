@@ -1,5 +1,10 @@
 ## 131. Installing `Postgres`
 
+* [How to Install PostgreSql in Mac M1/M2 | Configure and Install 2023] (https://www.youtube.com/watch?v=fwPR-PCY0h
+8)
+
+`postgresql.org` -> Download -> `macOS`
+
 ***
 
 ## 132. Creating Database
