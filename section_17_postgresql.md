@@ -465,6 +465,10 @@ DROP USER james;
 
 * [SQL Database Drivers](https://github.com/golang/go/wiki/SQLDrivers)
 
+```sql
+db, err := sql.Open("postgres", "postgres://bond    :password@localhost     /bookstore    ?sslmode=disable")
+db, err := sql.Open("postgres", "postgres://username:password@localhost:5432/database_name?sslmode=disable")
+```
 
 ```
 $ cd /Users/marshad/Desktop/golang-web-dev/044_postgres/16_go-postgres
@@ -472,11 +476,6 @@ $ go mod init 16_go-postgres
 $ go mod tidy
 
 $ go run main.go
-```
-
-```sql
-db, err := sql.Open("postgres", "postgres://bond    :password@localhost     /bookstore    ?sslmode=disable")
-db, err := sql.Open("postgres", "postgres://username:password@localhost:5432/database_name?sslmode=disable")
 ```
 
 * create a db
