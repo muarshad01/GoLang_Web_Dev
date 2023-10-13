@@ -474,7 +474,10 @@ $ go mod tidy
 $ go run main.go
 ```
 
-* `// urlExample := "postgres://username:password@localhost:5432/database_name"`
+```sql
+db, err := sql.Open("postgres", "postgres://bond    :password@localhost     /bookstore    ?sslmode=disable")
+db, err := sql.Open("postgres", "postgres://username:password@localhost:5432/database_name?sslmode=disable")
+```
 
 * create a db
 ```sql
