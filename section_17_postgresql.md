@@ -328,7 +328,7 @@ SELECT * FROM employees WHERE salary > 60000 AND score = 26;
 ```
 
 * `IN`
-```
+```sql
 SELECT * FROM employees WHERE score IN (25, 26);
 ```
 
@@ -398,8 +398,7 @@ SELECT * FROM employees ORDER BY id;
 
 * `DELETE`
 ```sql
-DELETE FROM table
-WHERE <condition>;
+DELETE FROM table WHERE <condition>;
 ```
 
 ```sql
@@ -510,21 +509,22 @@ ALTER user bond with superuser;
     - You should already have a `bookstore` database:
 
 * list databases
-```
-\l                          # `l` or list
+```sql
+\l                  # `l` or list
 ```
 
 * switch into that database
 ```sql
-\c bookstore                    # `c` or choose
+\c bookstore        # `c` or choose
 ```
 
 * directory of tables, if any
 ```sql
-\d
+\d                  # `d` or describe
 ```
 
 # create table
+
 ```sql
 CREATE TABLE books (
   isbn    char(14)      PRIMARY KEY NOT NULL,
@@ -536,11 +536,11 @@ CREATE TABLE books (
 
 * directory of tables
 ```sql
-\d                          # `d` or describe
+\d                  # `d` or describe
 ```
 
-details of table ```books```
-```
+* details of table `books`
+```sql
 \d books
 ```
 
@@ -570,7 +570,7 @@ _ "github.com/lib/pq"
 * This approach is standard for most of Go's SQL drivers. -- Alex Edwards
 
 * define a book type struct
-```
+```go
 type Book struct {
 	isbn   string
 	title  string
