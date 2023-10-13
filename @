@@ -419,46 +419,6 @@ DELETE FROM sport;
 
 ## 146. Users - Create, Grant, Alter, Remove
 
-* see `current user`
-```sql
-SELECT current_user;
-```
-
-* details of users
-```sql
-\du
-```
-
-* create user
-```sql
-CREATE USER james WITH PASSWORD 'password';
-```
-
-* grant privileges
-    - privileges: SELECT, INSERT, UPDATE, DELETE, RULE, ALL
-```sql
-GRANT ALL PRIVILEGES ON DATABASE company to james;
-```
-
-* revoke privileges
-```sql
-REVOKE ALL PRIVILEGES ON DATABASE company from james;
-```
-
-* ALTER
-```sql
-ALTER USER james WITH SUPERUSER;
-```
-
-```sql
-ALTER USER james WITH NOSUPERUSER;
-```
-
-* remove
-```sql
-DROP USER james;
-```
-
 ***
 
 ## 147. `Go` & `Postgres`

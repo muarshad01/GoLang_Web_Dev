@@ -297,13 +297,21 @@ SELECT * FROM employees CROSS JOIN phonenumbers;
 
 * If you place `Primary Key` from one table to another table, it become `Foreighn Key`.
 
-```sql
+```
 SELECT <fields> FROM <table> INNER JOIN <table> ON <pkey> = <fkey>;
 ```
 
-```sql
+```
 SELECT employees.NAME, phonenumbers.PHONE from employees INNER JOIN phonenumbers ON employees.ID = phonenumbers.EMP_ID;
 ```
+
+
+
+
+
+
+
+
 
 ***
 
@@ -317,147 +325,17 @@ SELECT employees.NAME, phonenumbers.PHONE from employees INNER JOIN phonenumbers
 
 ## 143. Clauses
 
-* Adding `WHERE` to a SQL query allows you to filter results.
-```sql
-SELECT * FROM employees WHERE salary > 60000;
-```
-
-* `AND`
-```sql
-SELECT * FROM employees WHERE salary > 60000 AND score = 26;
-```
-
-* `IN`
-```
-SELECT * FROM employees WHERE score IN (25, 26);
-```
-
-* `NOT`
-```sql
-SELECT * FROM employees WHERE score NOT IN (25, 26);
-```
-
-* `BETWEEN`
-```sql
-SELECT * FROM employees WHERE score BETWEEN 23 AND 26;
-```
-
-* `IS NOT NULL`
-```sql
-SELECT * FROM employees WHERE score IS NOT NULL;
-```
-
-* `LIKE`
-```sql
-SELECT * FROM employees WHERE name LIKE '%an%';
-```
-
-* `OR`
-```sql
-SELECT * FROM employees WHERE score <= 24 OR salary < 50000;
-```
-
-
-* `LIMIT` the number of records returned
-```sql
-SELECT * FROM employees LIMIT 4;
-```
-
-* `ORDER BY`
-```sql
-SELECT * FROM employees ORDER BY id LIMIT 4;
-```
 ***
 
 ## 144. Update a Record
-
-* `UPDATE`
-
-```sql
-UPDATE table
-SET col1 = val1, col2 = val2, ..., colN = valN
-WHERE <condition>;
-```
-
-```sql
-SELECT * FROM employees;
-```
-
-```sql
-UPDATE employees SET score = 99 WHERE ID = 3;
-```
-
-* `ORDER BY`
-```sql
-SELECT * FROM employees ORDER BY id;
-```
 
 ***
 
 ## 145. Delete a Record
 
-* `DELETE`
-```sql
-DELETE FROM table
-WHERE <condition>;
-```
-
-```sql
-SELECT * FROM sport;
-```
-
-```sql
-DELETE FROM sport WHERE id = 6;
-```
-
-* `WARNING`: this deletes all records:**
-```sql
-DELETE FROM sport;
-```
-
 ***
 
 ## 146. Users - Create, Grant, Alter, Remove
-
-* see `current user`
-```sql
-SELECT current_user;
-```
-
-* details of users
-```sql
-\du
-```
-
-* create user
-```sql
-CREATE USER james WITH PASSWORD 'password';
-```
-
-* grant privileges
-    - privileges: SELECT, INSERT, UPDATE, DELETE, RULE, ALL
-```sql
-GRANT ALL PRIVILEGES ON DATABASE company to james;
-```
-
-* revoke privileges
-```sql
-REVOKE ALL PRIVILEGES ON DATABASE company from james;
-```
-
-* ALTER
-```sql
-ALTER USER james WITH SUPERUSER;
-```
-
-```sql
-ALTER USER james WITH NOSUPERUSER;
-```
-
-* remove
-```sql
-DROP USER james;
-```
 
 ***
 
