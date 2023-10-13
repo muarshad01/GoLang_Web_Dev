@@ -463,6 +463,34 @@ DROP USER james;
 
 ## 147. `Go` & `Postgres`
 
+* [SQL Database Drivers](https://github.com/golang/go/wiki/SQLDrivers)
+
+
+```
+$ cd /Users/marshad/Desktop/golang-web-dev/044_postgres/16_go-postgres
+$ go mod init 16_go-postgres
+$ go mod tidy
+
+$ go run main.go
+```
+
+* `// urlExample := "postgres://username:password@localhost:5432/database_name"`
+
+* create a db
+```sql
+CREATE DATABASE bookstore;
+```
+
+* create user
+```sql
+CREATE USER bond WITH PASSWORD 'password';
+```
+
+* grant privileges
+```sql
+GRANT ALL PRIVILEGES ON DATABASE bookstore to bond;
+```
+
 ***
 
 ## 148. Select Query
