@@ -6,7 +6,7 @@
     - search 'Postgres' -> Initialize (`marshad`, `postgres`, `template1`)
     - click `marshad`
 
-```
+```unix
 marshad# \conninfo
 You are connected to database "marshad" as user "marshad" via socket in "/tmp" at port "5432".
 marshad-# \q 
