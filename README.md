@@ -16,6 +16,10 @@
 
 * [Section 11: RDBMS](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_11_relational_databases.md)
 
+* [Section 13: Photo Blog](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_13_photo_blog.md)
+
+* [Section 17: Postgresql](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_17_postgresql.md)
+
 ***
 
 # Books & Web-Links
