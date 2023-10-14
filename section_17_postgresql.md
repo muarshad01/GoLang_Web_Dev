@@ -202,9 +202,12 @@ SELECT * FROM phonenumbers;
 
 ### hands-on exercise
 
-* delete all of your current tables.
-* READ ALL OF THIS: create a new table called employees with these fields `id, name, score, salary` AND give `score` a default value of 10 AND have the `id` field automatically increment.
-*. add these records and then show all of the records
+* `delete` all of your current tables.
+* READ ALL OF THIS: 
+    - `create` a new table called `employees` with these fields `id, name, score, salary` AND 
+    - give `score` a default value of 10 AND have the `id` field automatically increment.
+* add these records and then show all of the records.
+
 
 ```
  id |  name  | score | salary 
@@ -229,10 +232,10 @@ DROP TABLE employees, phonenumbers;
 
 ```sql
 CREATE TABLE employees (
-   ID  SERIAL PRIMARY KEY NOT NULL,
-   NAME           TEXT    NOT NULL,
-   SCORE          INT     DEFAULT 10 NOT NULL,
-   SALARY         REAL
+   ID  SERIAL PRIMARY KEY   NOT NULL,
+   NAME             TEXT    NOT NULL,
+   SCORE            INT     DEFAULT 10 NOT NULL,
+   SALARY           REAL
 );
 ```
 
@@ -278,12 +281,12 @@ INSERT INTO phonenumbers (PHONE,EMP_ID) VALUES
 
 * A cross join returns the `Cartesian product` of rows from tables in the join. In other words, it will produce rows which combine each-row-from-the-first-table with each-row-from-the-second-table.
 
-```
+```sql
 SELECT * FROM employees;
 SELECT * FROM phonenumbera;
 ```
 
-```
+```sql
 SELECT <fields> FROM <table1> CROSS JOIN <table2>;
 ```
 
@@ -295,10 +298,10 @@ SELECT * FROM employees CROSS JOIN phonenumbers;
 
 ## 140. Query - Inner Join
 
-* If you place `Primary Key` from one table to another table, it become `Foreighn Key`.
+* If you place `Primary Key` from one table to another table, it become `Foreign Key`.
 
 ```sql
-SELECT <fields> FROM <table> INNER JOIN <table> ON <pkey> = <fkey>;
+SELECT <fields> FROM <table1> INNER JOIN <table1> ON <pkey> = <fkey>;
 ```
 
 ```sql
