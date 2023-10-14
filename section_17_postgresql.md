@@ -692,8 +692,8 @@ rows, err := db.Query("SELECT * FROM books")
 var db *sql.DB
 ```
 
-*Initialize your database
-    - Note: `defer.db.Close()` has been removed
+* Initialize your database
+    - Note: `defer db.Close()` has been removed
 
 ```go
 func init() {
