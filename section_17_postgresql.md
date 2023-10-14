@@ -412,7 +412,7 @@ SELECT * FROM sport;
 DELETE FROM sport WHERE id = 6;
 ```
 
-* `WARNING`: this deletes all records:**
+* `WARNING`: this deletes all records.
 ```sql
 DELETE FROM sport;
 ```
@@ -428,7 +428,7 @@ SELECT current_user;
 
 * details of users
 ```sql
-\du
+\du                                 # `du` - describe user(s)
 ```
 
 * create user
