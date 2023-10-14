@@ -567,12 +567,13 @@ _ "github.com/lib/pq"
 ```
 
 * We don't use anything in the `github.com/lib/pq` package directly, which means that the `Go` compiler will raise an error if we try to import it normally. 
-* But, we need the `pq` package's `init()` function to run so that our driver can register itself with database/sql. 
+* But, we need the `github.com/lib/pq` package's `init()` function to run so that our driver can register itself with database/sql. 
 * We get around this by aliasing the package name to the blank identifier (`_`). 
 * This means `pq.init()` still gets executed, but the alias is harmlessly discarded (and our code runs error-free). 
 * This approach is standard for most of Go's SQL drivers. -- Alex Edwards
 
-* define a book type struct
+* define a book type `struct`
+
 ```go
 type Book struct {
 	isbn   string
@@ -582,9 +583,10 @@ type Book struct {
 }
 ```
 
-Next we define a Book type. The `struct` fields and their types must align to our books table. For completeness, I should point out that we've only been able to use the `string` and `float32` types safely because we set `NOT NULL` constraints on the columns in our table. If the table contained nullable fields we would need to use the `sql.NullString` and `sql.NullFloat64` types instead – see [this Gist](https://gist.github.com/alexedwards/dc3145c8e2e6d2fd6cd9) for a working example. Generally it's easiest to avoid nullable fields altogether if you can, which is what we've done here. -- Alex Edwards
+Next we define a Book type. The `struct` fields and their types must align to our books table. For completeness, I should point out that we've only been able to use the `string` and `float32` types safely because we set `NOT NULL` constraints on the columns in our table. If the table contained nullable fields we would need to use the `sql.NullString` and `sql.NullFloat64` types instead – see [this Gist](https://gist.github.com/alexedwards/dc3145c8e2e6d2fd6cd9) for a working example. Generally it's easiest to avoid `nullable fields` altogether if you can, which is what we've done here. -- Alex Edwards
 
-* initialize a new sql.DB
+* initialize a new `sql.DB`
+
 ```go
 db, err := sql.Open("postgres", "postgres://bond:password@localhost/bookstore?sslmode=disable")
 	if err != nil {
@@ -593,20 +595,24 @@ db, err := sql.Open("postgres", "postgres://bond:password@localhost/bookstore?ss
 	defer db.Close()
 ```
 
-* In the `main()` function we initialise a new `sql.DB` by calling `sql.Open()`. We pass in the name of our driver (in this case `postgres`) and the connection string (you'll need to check your driver documentation for the correct format). 
-* It's worth emphasizing that `sql.DB` is not a database connection – it's an abstraction representing a pool of underlying connections. You can change the maximum number of open and idle connections in the pool with the `db.SetMaxOpenConns()` and `db.SetMaxIdleConns()` methods respectively. 
+* In the `main()` function we initialise a new `sql.DB` by calling `sql.Open()`. We pass in the name of our driver (in this case `postgres`) and the connection string (you'll need to check your driver documentation for the correct format).
+ 
+* It's worth emphasizing that `sql.DB` is not a database connection – it's an abstraction representing a pool of underlying connections. You can change the maximum number of open and idle connections in the pool with the `db.SetMaxOpenConns()` and `db.SetMaxIdleConns()` methods respectively.
+ 
 * A final thing to note is that `sql.DB` is safe for concurrent access, which is very convenient if you're using it in a web application (like we will shortly). -- Alex Edwards
 
-* ping the db
+* ping the `db`
+
 ```go
 	if err = db.Ping(); err != nil {
 		panic(err)
 	}
 ```
 
-* Because  `sql.Open()` doesn't actually check a connection, we also call `DB.Ping()` to make sure that everything works OK on startup. -- Alex Edwards
+* Because  `sql.Open()` doesn't actually check a connection, we also call `db.Ping()` to make sure that everything works OK on startup. -- Alex Edwards
 
-* query the db
+* query the `db`
+
 ```go
 rows, err := db.Query("SELECT * FROM books")
 	if err != nil {
@@ -615,14 +621,20 @@ rows, err := db.Query("SELECT * FROM books")
 	defer rows.Close()
 ```
 
-* We will fetch a resultset from the books table using the `db.Query()` method and assign it to a  rows variable. 
-* Then we defer `rows.Close()` to ensure the resultset is properly closed before the parent function returns.
+* We will fetch a resultset from the books table using the `db.Query()` method and assign it to a `rows` variable. 
+
+* Then we `defer rows.Close()` to ensure the resultset is properly closed before the parent function returns.
+
 * Closing a resultset properly is really important. 
+
 * As long as a resultset is open it will keep the underlying database connection open – which in turn means the connection is not available to the pool.
+
 * So if something goes wrong and the resultset isn't closed it can rapidly lead to all the connections in your pool being used up. 
-* Another gotcha (which caught me out when I first began) is that the defer statement should come after you check for an error from `db.Query`. Otherwise, if `db.Query()` returns an error, you'll get a panic trying to close a `nil` resultset." -- Alex Edwards
+
+* Another gotcha (which caught me out when I first began) is that the `defer` statement should come after you check for an error from `db.Query`. Otherwise, if `db.Query()` returns an error, you'll get a panic trying to close a `nil` resultset." -- Alex Edwards
 
 * iterate through results
+
 ```go
 	for rows.Next() {
 		bk := Book{}
@@ -635,11 +647,15 @@ rows, err := db.Query("SELECT * FROM books")
 ```
 
 * We then use `rows.Next()` to iterate through the rows in the resultset. 
+
 * This preps the first (and then each subsequent) row to be acted on by the `rows.Scan()` method. 
+
 * Note that if iteration over all of the rows completes then the resultset automatically closes itself and frees-up the connection. 
+
 * We use the `rows.Scan()` method to copy the values from each field in the row to a new Book object that we created. We then check for any errors that occurred during Scan, and add the new Book to a slice of books. -- Alex Edwards
 
 * make sure everything ran well
+
 ```go
 	if err = rows.Err(); err != nil {
 		panic(err)
@@ -647,9 +663,11 @@ rows, err := db.Query("SELECT * FROM books")
 ```
 
 * When our `rows.Next()` loop has finished we call `rows.Err()`. 
+
 * This returns any error that was encountered during the interation. 
-* It's important to call this – don't just assume that we completed a successful iteration over the whole resultset. 
--- Alex Edwards 
+
+* It's important to call this – don't just assume that we completed a successful iteration over the whole resultset. -- Alex Edwards 
+
 * `Err()` returns the error, if any, that was encountered during iteration. `Err()` may be called after an explicit or implicit Close.
 
 ***
@@ -658,12 +676,14 @@ rows, err := db.Query("SELECT * FROM books")
 
 
 * Add a package level scope variable
+
 ```go
 var db *sql.DB
 ```
 
 *Initialize your database
     - Note: `defer.db.Close()` has been removed
+
 ```go
 func init() {
 	var err error
@@ -680,6 +700,7 @@ func init() {
 ```
 
 * add routes & server
+
 ```go
 func main() {
 	http.HandleFunc("/", index)
@@ -688,6 +709,7 @@ func main() {
 ```
 
 * add a index func
+
 ```go
 func index(w http.ResponseWriter, r *http.Request){
 	if r.Method != "GET" {
@@ -724,6 +746,7 @@ func index(w http.ResponseWriter, r *http.Request){
 ```
 
 * run the application and make a request
+
 ```
 $ curl -i localhost:8080/books
 ```
@@ -735,21 +758,25 @@ $ curl -i localhost:8080/books
 * query a single book
 
 * func `main()`
+
 ```go
 http.HandleFunc("/books/show", booksShow)
 ```
 
 * func `bookShow` added
-Arguments to the SQL function are referenced in the function body using the syntax $n: $1 refers to the first argument, $2 to the second, and so on. 
-If an argument is of a composite type, then the dot notation, e.g., $1.name, can be used to access attributes of the argument. The arguments can only be used as data values, not as identifiers.[source: postgres docs](https://www.postgresql.org/docs/9.1/static/xfunc-sql.html)
+
+* Arguments to the SQL function are referenced in the function body using the syntax $n: $1 refers to the first argument, $2 to the second, and so on. 
+
+* If an argument is of a composite type, then the dot notation, e.g., $1.name, can be used to access attributes of the argument. The arguments can only be used as data values, not as identifiers.[source: postgres docs](https://www.postgresql.org/docs/9.1/static/xfunc-sql.html)
 
 * Behind the scenes, `db.QueryRow` (and also `db.Query()` and `db.Exec()`) work by creating a new prepared statement on the database, and subsequently execute that prepared statement using the placeholder parameters provided. This means that *all three methods are safe from SQL injection* when used correctly. 
 
-From Wikipedia: Prepared statements are `resilient against SQL injection`, because parameter values, which are transmitted later using a different protocol, need not be correctly escaped. If the original statement template is not derived from external input, injection cannot occur.
+* From Wikipedia: Prepared statements are `resilient against SQL injection`, because parameter values, which are transmitted later using a different protocol, need not be correctly escaped. If the original statement template is not derived from external input, injection cannot occur.
  
-The placeholder parameter syntax differs depending on your database. `Postgres` uses the $N notation, but MySQL, SQL Server and others use the `?` character as a placeholder. -- Alex Edwards
+* The placeholder parameter syntax differs depending on your database. `Postgres` uses the $N notation, but MySQL, SQL Server and others use the `?` character as a placeholder. -- Alex Edwards
 
 * run the application and make a request
+
 ```
 curl -i localhost:8080/books/show?isbn=978-1505255607
 ```
@@ -759,6 +786,7 @@ curl -i localhost:8080/books/show?isbn=978-1505255607
 ## 151. Insert Record
 
 * run the application and make a request
+
 ```
 curl -i -X POST -d "isbn=978-1470184841&title=Metamorphosis&author=Franz Kafka&price=5.90" localhost:8080/books/create/process
 ```
@@ -776,18 +804,3 @@ curl -i -X POST -d "isbn=978-1470184841&title=Metamorphosis&author=Franz Kafka&p
 ## 154. Code Organization
 
 ***
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
