@@ -61,7 +61,7 @@ CREATE DATABASE employees;
 
 * list databases
 ```sql
-\l
+\l                                  # `l` - list
 ```
 
 * connect to a database
@@ -108,7 +108,7 @@ CREATE TABLE employees (
 
 * show tables in a database (list down)
 ```sql
-\d
+\d                                      # `d` - display
 ```
 
 * show details of a table
