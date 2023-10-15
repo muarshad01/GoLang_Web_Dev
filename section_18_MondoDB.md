@@ -8,6 +8,29 @@
 
 ## 157. Installing Mongo
 
+```
+```
+
+```
+$ brew update
+```
+
+```
+$ brew upgrade
+```
+
+```
+$ sudo brew install mongodb
+```
+
+```
+$ mkdir -p ~/data/mongo_db
+$ sudo chown -R ... ~/data/mongo_db
+```
+
+```
+$ mongodb --datapath ~/data/mongo_db
+```
 ***
 
 ## 158. Database
