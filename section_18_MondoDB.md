@@ -19,6 +19,10 @@
 ```
 
 ```
+$ brew -v
+```
+
+```
 $ vim ~/.bash_profile
 export PATH=$PATH:/opt/homebrew/bin
 $ source ~/.bash_profile
