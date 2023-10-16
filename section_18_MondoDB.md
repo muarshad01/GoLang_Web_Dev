@@ -68,6 +68,11 @@ $ mongosh
 test> show dbs
 ```
 
+```
+$ mkdir -p /data/db
+$ sudo chown -R 4(whoami) /data/db
+```
+
 ***
 
 ## 158. Database
