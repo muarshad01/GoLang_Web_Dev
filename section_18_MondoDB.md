@@ -12,8 +12,8 @@
 
 * [How to install Mongodb 5](https://www.youtube.com/watch?v=s1WQ0eEpqqg)
 
-* Install brew
-    - [Homebrew](https://brew.sh/)
+### Install brew
+* [Homebrew](https://brew.sh/)
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
@@ -30,27 +30,32 @@ $ source ~/.bash_profile
 
 ```
 $ brew update
-```
 
-```
 $ brew upgrade
 ```
-* Install xcode
+
+### Install `xcode`
 ```
 $ xcode-select --install
 ```
 
+### Install mongodb
+
 ```
-brew install mongodb-community@6.0
+$ brew tap mongodb/brew               # where to install that package from
 ```
 
 ```
-brew services start mongodb-community@6.0
-brew services stop  mongodb-community@6.0
+$ brew install mongodb-community@6.0
 ```
 
 ```
-brew services list
+$ brew services start mongodb-community@6.0
+$ brew services stop  mongodb-community@6.0
+```
+
+```
+$ brew services list
 ```
 
 ```
@@ -59,6 +64,7 @@ $ mongod --config /opt/homebrew/etc/mongod.conf --fork
 
 ```
 $ mongosh
+
 test> show dbs
 ```
 
