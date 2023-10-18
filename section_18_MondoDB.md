@@ -161,6 +161,7 @@ db.createCollection(<name>, {<optional options>})
 ```
 
 * optional options
+
 | option | type | description |
 | --- | --- | --- |
 | capped | bool | caps the size |
