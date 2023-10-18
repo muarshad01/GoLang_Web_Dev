@@ -595,7 +595,7 @@ db.customers.insert(
 db.customers.remove({})
 ```
 
-*put documents back
+* put documents back
 ```
 db.customers.insert(
     [
@@ -620,7 +620,7 @@ db.<collection name>.find(<selection criteria>,<list of fields with toggle 0 or 
 ```
 db.customers.find({},{_id:0, name:1,})
 ```
-_id is displayed by default; turn off with 0
+_id is displayed by default; `turn off with 0`
 
 ```
 db.customers.find({},{_id:0, name:1, age:1})
@@ -692,10 +692,7 @@ db.customers.find({age:{$gt:32}},{_id:0, name:1, age:1}).limit(2)
 
 ## 166. Sort
 
-# sort
-
-Run **setup** below first
-
+* sort
 ```
 db.<collection name>.find().sort(<field to sort on>:<1 for ascend, -1 descend>)
 ```
@@ -711,7 +708,7 @@ db.oscars.find({releaseYear:{$gt:1980}},{_id:0,year:1,title:1})
 ```
 
 
-### setup
+* setup
 ```
 db.oscars.insert([
   { "year": "1927",
@@ -1483,6 +1480,23 @@ db.oscars.insert([
 ***
 
 ## 167. Index
+
+* create index
+```
+db.<collection name>.createIndex({<field to index>:<1 for ascend, -1 descend>})
+```
+
+* create index
+```
+db.oscars.createIndex({title:1})
+```
+
+* see indexes
+```
+db.oscars.getIndexes()
+```
+
+[learn to create a unique index and more](https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/#db.collection.createIndex)
 
 ***
 
