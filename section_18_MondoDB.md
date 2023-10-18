@@ -149,6 +149,15 @@ db.dropDatabase()
 
 ## 159. Collection
 
+```
+test> db
+test
+test> show dbs
+admin   40.00 KiB
+config  72.00 KiB
+local   72.00 KiB
+test>
+```
 
 * create implicitly
 ```
@@ -162,11 +171,11 @@ db.createCollection(<name>, {<optional options>})
 
 * optional options
 
-| option | type | description |
-| --- | --- | --- |
-| capped | bool | caps the size |
-| size | number | sets size of cap in bytes |
-| max | bool | maximum number of documents allowed in capped collection |
+| option | type   | description   |
+| ---    | ---    | ---           |
+| capped | bool   | caps the size |
+| size   | number | sets size of cap in bytes |
+| max    | bool   | maximum number of documents allowed in capped collection |
 
 [other options including validation](https://docs.mongodb.com/manual/reference/method/db.createCollection/)
 
@@ -176,7 +185,7 @@ db.createCollection("customers")
 ```
 
 ```
-db.createCollection("crs",{capped:true, size:65536,max:1000000})
+db.createCollection("crs", {capped:true, size:65536, max:1000000})
 ```
 
 * view collections
@@ -184,7 +193,7 @@ db.createCollection("crs",{capped:true, size:65536,max:1000000})
 show collections
 ```
 
-* drop
+* drop collection
 ```
 db.<collection name>.drop()
 ```
