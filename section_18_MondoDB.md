@@ -1523,11 +1523,11 @@ db.createUser(
 
 * exit mongo & then start again
 ```
-mongod --auth
+mongosh --auth
 ```
 
 ```
-mongo -u "jamesbond" -p "moneypennyrocks007sworld" --authenticationDatabase "admin"
+mongosh -u "jamesbond" -p "moneypennyrocks007sworld" --authenticationDatabase "admin"
 ```
 
 * see current user
@@ -1550,7 +1550,7 @@ db.createUser(
 
 * exit mongo & then start again
 ```
-mongod --auth
+mongosh --auth
 ```
 
 ```
@@ -1568,11 +1568,11 @@ db.runCommand({connectionStatus : 1})
 
 * exit mongo & then start again with auth enabled
 ```
-mongod --auth
+mongosh --auth
 ```
 
 ```
-mongo -u "bond" -p "moneypenny007" --authenticationDatabase "store"
+mongosh -u "bond" -p "moneypenny007" --authenticationDatabase "store"
 ```
 
 * test
@@ -1597,7 +1597,7 @@ db.customers.insert({"role" : "double-zero", "name" : "Elon Musk", "age" : 47 })
 launch a new terminal window
 
 ```
-mongo
+mongosh
 ```
 
 * should be unauthorized:
