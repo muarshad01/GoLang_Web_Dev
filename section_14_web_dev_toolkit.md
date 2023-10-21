@@ -29,22 +29,21 @@
 
 * `godoc.org` -> Community -> Go Blog -> [JSON and Go](https://go.dev/blog/json)
 
-* `Marshal`: Take a Go data structure -> Turn it into JSON -> Assign it to a variable
 ```go
 func Marshal(v any) ([]byte, error)
-
 ```
+* `Marshal`: Take a Go data structure -> Turn it into JSON -> Assign it to a variable
 
-* `Encode`:  Take a Go data structure -> Turn it into JSON -> Send it over the wire
 ```go
 type Encoder
     func NewEncoder(w io.Writer) *Encoder
     func (enc *Encoder) Encode(v any) error
 ```
+* `Encode`:  Take a Go data structure -> Turn it into JSON -> Send it over the wire
 
 ***
 
-## 108. Unmarshal JSON with Go
+## 108. `Unmarshal` JSON with Go
 
 [Convert JSON to Go Instantly](https://mholt.github.io/json-to-go/)
 
@@ -60,8 +59,6 @@ type Decoder
     func (dec *Decoder) Decode(v any) error
 ```
 * `Decode` reads the next JSON-encoded value from its input and stores it in the `value pointed to by v`, i.e., `v` needs to be a pointer.
-
-
 
 ***
 
