@@ -23,7 +23,7 @@
 ***
 
 
-## 107. Go and JSON - Marshal & Encode
+## 107. Go and JSON - `Marshal` & `Encode`
 
 [Encoding/JSON](https://pkg.go.dev/encoding/json)
 
@@ -42,6 +42,18 @@ type Encoder
     func (enc *Encoder) Encode(v any) error
 ```
 
+***
+
+## 108. Unmarshal JSON with Go
+
+[Convert JSON to Go Instantly](https://mholt.github.io/json-to-go/)
+
+
+```go
+func Unmarshal(data []byte, v any) error
+```
+* `Unmarshal` parses the JSON-encoded data and stores the result in the `value pointed to by v`, i.e., `v` need to be a pointer.
+
 ```go
 type Decoder
     func NewDecoder(r io.Reader) *Decoder
@@ -49,17 +61,7 @@ type Decoder
 ```
 * `Decode` reads the next JSON-encoded value from its input and stores it in the `value pointed to by v`, i.e., `v` needs to be a pointer.
 
-```
-```go
-func Unmarshal(data []byte, v any) error
-```
-* `Unmarshal` parses the JSON-encoded data and stores the result in the `value pointed to by v`, i.e., `v` need to be a pointer.
 
-***
-
-## 108. Unmarshal JSON with Go
-
-[Convert JSON to Go Instantly](https://mholt.github.io/json-to-go/)
 
 ***
 
