@@ -72,6 +72,10 @@ type Decoder
 
 ## 111. AJAX Introduction
 
+* `AJAX` - Asynchronous JavaScript and XML
+
+Allows Browser to communicate with the Server without reloading the entire page.
+
 ***
 
 ## 112. AJAX Server Side
