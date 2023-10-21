@@ -34,23 +34,34 @@
 * Encode:  Take a Go data structure -> Turn it into JSON -> Send it over the wire
 
 ```go
-type Decoder
-    func NewDecoder(r io.Reader) *Decoder
-    func (dec *Decoder) Decode(v any) error
-
 type Encoder
     func NewEncoder(w io.Writer) *Encoder
     func (enc *Encoder) Encode(v any) error
 ```
 
 ```go
+type Decoder
+    func NewDecoder(r io.Reader) *Decoder
+    func (dec *Decoder) Decode(v any) error
+```
+* `Decode` reads the next JSON-encoded value from its input and stores it in the `value pointed to by v`, i.e., `v` needs to be a pointer.
+
+```
+
+```go
 func Marshal(v any) ([]byte, error)
+```
+
+```go
 func Unmarshal(data []byte, v any) error
 ```
+* `Unmarshal` parses the JSON-encoded data and stores the result in the `value pointed to by v`, i.e., `v` need to be a pointer.
 
 ***
 
 ## 108. Unmarshal JSON with Go
+
+[Convert JSON to Go Instantly](https://mholt.github.io/json-to-go/)
 
 ***
 
