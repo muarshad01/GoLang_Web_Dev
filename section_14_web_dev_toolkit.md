@@ -33,6 +33,40 @@
 
 ## 105. TLS & HTTPS
 
+* Transport Layer Security (TLS)
+* Secure Socket Layer (SSL) 
+
+```go
+func ListenAndServe(addr string, handler Handler) error
+func ListenAndServeTLS(addr, certFile, keyFile string, handler Handler) error
+```
+
+```
+$ vim ~/.bash_profile
+
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/goworkspace
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
+export GO111MODULE="on"
+
+$ source ~/.bash_profile
+```
+
+```
+$ cd $GOROOT
+$ pwd
+--/usr/local/go
+
+$ sudo go run /usr/local/go/src/crypto/tls/generate_cert.go --host=localhost
+-- 2023/10/22 11:55:00 wrote cert.pem
+-- 2023/10/22 11:55:00 wrote key.pem
+```
+
+```
+`https://localhost:10443/` or `https://127.0.0.1:10443/`
+```
+
 ***
 
 ## 106. JSON - JavaScript Object Notation
