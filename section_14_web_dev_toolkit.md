@@ -12,6 +12,21 @@
 
 ## 104. Context
 
+What is the context of what I'm working with.
+
+We can pass:
+    - session_ids
+    - user_ids
+    - deadlines
+
+* signal to other processes
+
+* Context makes it possible to manage a `chain-of-calls` within the `same-call-path` by signaling context’s `Done` channel.
+
+### Leaking goroutines
+
+* [Using contexts to avoid leaking goroutines](https://rakyll.org/leakingctx/)
+
 ***
 
 ## 105. TLS & HTTPS
