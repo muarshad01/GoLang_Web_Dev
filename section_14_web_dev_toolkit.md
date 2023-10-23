@@ -1,6 +1,7 @@
 ## 101. Keyed-Hash Message Authentication Code (HMAC)
 
 * [crypto/hmac](https://pkg.go.dev/crypto/hmac)
+* [hash.Hash](https://pkg.go.dev/hash#Hash)
 
 ```go
 func getCode(s string) string {
