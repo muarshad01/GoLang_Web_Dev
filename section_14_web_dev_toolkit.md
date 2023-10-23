@@ -24,13 +24,24 @@ type Encoding
 ```go
 s := "Hello"
 encodeStd := "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-
 s64 := base64.NewEncoding(encodeStd).EncodeToString([]byte(s))
+
+OR
+
+s64 :=     base64.StdEncoding.EncodeToString([]byte(s))
+
+bs, err := base64.StdEncoding.DecodeString(s64)
+
 ```
 
 ***
 
 ## 103. Web Storage
+
+* DevTools -> Application -> Storage
+    - Local storage 
+    - Session storage 
+    - Cookies
 
 ***
 
