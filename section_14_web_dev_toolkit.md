@@ -38,6 +38,11 @@ bs, err := base64.StdEncoding.DecodeString(s64)
 
 ## 103. Web Storage
 
+* DevTools -> Application -> Storage
+    - Local storage 
+    - Session storage 
+    - Cookies
+
 ***
 
 ## 104. Context
