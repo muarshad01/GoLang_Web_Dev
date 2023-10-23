@@ -18,6 +18,8 @@
 
 * [Section 13: Photo Blog](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_13_photo_blog.md)
 
+* [Section 14: Web Dev Toolkit](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_14_web_dev_toolkit.md)
+
 * [Section 15: Go and MongoDB](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_15_go_and_mongodb.md)
 
 * [Section 17: Postgresql](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_17_postgresql.md)
