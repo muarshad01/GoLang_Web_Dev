@@ -16,6 +16,8 @@
 
 * [Section 11: RDBMS](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_11_relational_databases.md)
 
+* [Section 12: Scaling on AWS](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_12_scaling_on_aws.md)
+
 * [Section 13: Photo Blog](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_13_photo_blog.md)
 
 * [Section 14: Web Dev Toolkit](https://github.com/muarshad01/Golang_Web_Dev/blob/master/section_14_web_dev_toolkit.md)
