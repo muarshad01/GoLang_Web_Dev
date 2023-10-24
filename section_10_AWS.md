@@ -53,7 +53,7 @@ $ GOOS=linux GOARCH=amd64 go build -o mybinary              # `-o` flag: put the
 ### Copy your binary to the sever
 
 ```
-$ scp -i ~/.ssh/kp-10-10-2023.pem mybinary ubuntu@[public-IPv4-DNS]:              # There is a `:` at the end
+$ scp -i ~/.ssh/kp-10-10-2023.pem   mybinary    ubuntu@[public IPv4 DNS]:~/              # There is a `:~/` at the end
 ```
 
 * `ec2-user` might be `ubuntu` depending upon your machine
@@ -84,7 +84,7 @@ $ uname -a
 ```
 $ sudo chmod 700 mybinary
 $ sudo ./mybinary
-- check it in a browser at [public-IP]
+- check it in a browser at [Public IPv4 address]
 ```
 
 ### Exit
@@ -106,13 +106,14 @@ To run our application after the terminal session has ended, we must do one of t
     - upstart
     - `system.d`
 
-### `System.d`
+### `system.d`
 
 ```
 # Create a configuration file
+
 $ cd /etc/systemd/system/
-$ sudo touch anynamewewant.service
-$ sudo vim   anynamewewant.service
+$ sudo touch `<filename>`.service           # MyFirstService.service
+$ sudo vim   `<filaname>`.service
 ```
 
 ```
@@ -130,10 +131,10 @@ WantedBy=multi-user.target
 ```
 
 ```
-$ sudo systemctl enable ```<filename>```.service
-$ sudo systemctl start  ```<filename>```.service
-$ sudo systemctl status ```<filename>```.service
-$ sudo systemctl stop   ```<filename>```.service
+$ sudo systemctl enable `<filename>`.service
+$ sudo systemctl start  `<filename>`.service
+$ sudo systemctl status `<filename>`.service
+$ sudo systemctl stop   `<filename>`.service
 ```
 
 ### Troubleshooting
