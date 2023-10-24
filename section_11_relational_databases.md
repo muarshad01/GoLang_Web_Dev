@@ -30,14 +30,12 @@ $ mysql -u root -p
 ```
 $ vim ~/.bash_profile
 export PATH=$PATH:/usr/local/mysql/bin              # Add to .bash_profile
-```
-
-```
 $ source ~/.bash_profile
 ```
 
 ```
 $ mysql -u root -p
+Enter Password: 1-8#
 mysql> show databases;
 ```
 ***
