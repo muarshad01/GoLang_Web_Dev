@@ -48,14 +48,14 @@ mysql> show databases;
     - `Choose a database creation method` -> `Standard Create`    
     - `Engine options` -> `MySQL`
     - `Edition` -> `MySQL Community`    
-    - `Engine Version` -> `MySQL 8.0.33` 
+    - `Engine Version` -> `MySQL 8.0.34` 
     - `Templates` -> `Dev/Test`
     - `Availability and durability` -> `Single DB Instance`
-    - `Settings`(test-db; admin; 1-8#)
+    - `Settings`(database-1; Master username: admin; Master password: 1-8#)
     - `Instance configuration` -> Burstable classes(`db.t3.micro`)
-    - `Storage` -> gp2(10)
-    - `Connectivity` -> All default; public access (YES); VPC security group: Create new -> `test-db-group`
-    - 
+    - `Storage` -> General Purpose SSD (gp2)
+    - `Connectivity` -> All default; public access (YES); VPC security group: Create new -> `database-1-sg`
+    - Create database
 ***
 
 ## 85. Connect Workbench to `MySQL` on `AWS`
