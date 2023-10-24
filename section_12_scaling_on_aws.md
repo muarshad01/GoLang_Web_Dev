@@ -30,11 +30,11 @@
 ## 90. Create an ELB Load Balancer
 
 * `EC2` -> Load Balancers -> Create load balancer
-    - `Application` or `Classic`
+    - `Application Load Balancer`
     - name: `standard-lb`
     - http & https
     - default VPC
-    - add two subnets
+    - Select two AZ's with one default subnet for each
 * configure security groups
     - choose `loadbalancer-sg` security group which we just setup
 * configure routing
@@ -44,6 +44,19 @@
     - load balancer will only forward to healthy web servers
 * register targets
 * create
+
+```
+$ cd /Users/marshad/Desktop/golang-web-dev/033_aws-scaling/02_load-balancer
+$ go mod init 02_load-balancer
+$ go mod tidy
+
+$ GOOS=linux GOARCH=amd64 go build -o mybinary
+```
+
+```
+$ scp -i ~/.ssh/ky-10-24-2023.pem   mybinary    ubuntu@[Public IPv4 DNS]:~/
+$ ssh -i ~/.ssh/ky-10-24-2023.pem               ubuntu@[Public IPv4 DNS]
+```
 
 ***
 
