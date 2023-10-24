@@ -153,10 +153,11 @@ $ sudo systemctl stop   `<filename>`.service
     - rm -rf go1.7.4.linux-amd64.tar.gz
 
 * make your go workspace
-    - mkdir goworkspace
-    - cd gowoworkspace
-    - mkdir bin pkg src
-    - cd ../
+```
+$ mkdir goworkspace
+cd gowoworkspace
+$ mkdir bin pkg src
+$ cd ../
 ```
 
 ```
@@ -165,8 +166,8 @@ $ sudo systemctl stop   `<filename>`.service
 
 export GOROOT=/home/ubuntu/go
 export GOPATH=/home/ubuntu/goworkspace
-export PATH=$PATH:/home/ubuntu/goworkspace/bin
-export PATH=$PATH:/home/ubuntu/go/bin
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 ```
 
 ```
@@ -199,27 +200,35 @@ $ cd /Users/marshad/Desktop/golang-web-dev/030_sessions/08_expire-sessio
 ```
 # Deploying our session example
 
-1. change your port number from 8080 to 80
+* change your port number from 8080 to 80
 
-1. create your binary
-  - GOOS=linux GOARCH=amd64 go build -o [some-name]
+* create your binary
+```
+$ GOOS=linux GOARCH=amd64 go build -o [some-name]
+```
 
-1. SSH into your server
-  - ssh -i /path/to/[your].pem ubuntu@[public-DNS]:
+* SSH into your server
+```
+$ ssh -i /path/to/[your].pem ubuntu@[Public IPv4 DNS]
+```
 
-1. create directories to hold your code
-  - for example, "wildwest" & "wildwest/templates"
+* create directories to hold your code
+    - for example, "wildwest" & "wildwest/templates"
 
-1. copy binary to the server
+* copy binary to the server
 
-1. copy your "templates" to the server
-  - scp -i /path/to/[your].pem templates/* ubuntu@[public-DNS]:/home/ubuntu/templates
+* copy your "templates" to the server
+```
+$ scp -i /path/to/[your].pem  templates/* ubuntu@[Public IPv4 DNS]:~/templates
+```
 
-1. chmod permissions on your binary
+* `chmod` permissions on your binary
 
-1. Run your code
-  - sudo ./[some-name]
-  - check it in a browser at [public-IP]
+* Run your code
+```
+$ sudo ./[some-name]
+```  
+- check it in a browser at [Public IPv4 address]
 
 # Persisting your application
 
@@ -244,13 +253,13 @@ $ cd /Users/marshad/Desktop/golang-web-dev/030_sessions/08_expire-sessio
   ---
 
   1. Add the service to systemd.
-    - sudo systemctl enable ```<filename>```.service
+    - sudo systemctl enable `<filename>`.service
   1. Activate the service.
-    - sudo systemctl start ```<filename>```.service
+    - sudo systemctl start  `<filename>`.service
   1. Check if systemd started it.
-    - sudo systemctl status ```<filename>```.service
+    - sudo systemctl status `<filename>`.service
   1. Stop systemd if so desired.
-    - sudo systemctl stop ```<filename>```.service
+    - sudo systemctl stop   `<filename>`.service
 
 # FOR EXAMPLE
   ---
