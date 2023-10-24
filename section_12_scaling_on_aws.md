@@ -12,18 +12,18 @@
 
 * You can modify the rules for a security group at any time; the new rules are automatically applied to all instances that are associated with the security group. When we decide whether to allow traffic to reach an instance, we evaluate all the rules from all the security groups that are associated with the instance.
 
+* Services -> EC2 -> Security Groups
+
 ### ELB security group (`loadbalancer-sg`)
-* Add this rule
+* Add this Inbound rule
     - HTTP TCP 80 Anywhere
     - copy `loadbalancer-sg Group ID`
   
-### Web tier security group (`webtier-sg`)
-* Add these rules
-    - HTTP TCP 80 Custom IP `<loadbalancer-sg Group ID>`
-    - SSH TCP 22 Custom IP
-    - copy `webtier-sg Group ID`
-* Add this rule
-    - MySql TCP 3306 Custom IP `<webservers-sg Group ID>`
+### Webtier security group (`webtier-sg`)
+* Add these Inbound rules
+    - HTTP  TCP 80    Custom IP `<loadbalancer-sg Group ID>`
+    - SSH   TCP 22    Custom IP
+    - MySql TCP 3306  Custom IP `<webtier-sg Group ID>`
 
 ***
 
