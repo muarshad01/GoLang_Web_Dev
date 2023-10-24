@@ -15,13 +15,13 @@
 * Create a new `EC2` instance
     - `Services` -> `EC2`
     - Instances -> `Launch Instances`
-    - Application and OS Images (AMI) -> Quick Start -> `Ubntu` -> Free tier eligible
-    - Instance type (`t2.micro`)
-    - Configure storage / 8GB free 
-    - Name add tags / web-server-mm-dd-yyyy (`web-server-10-12-2023`)
-    - Create security group/ SSH / HTTP
-    - Create key pair (`kp-mm-dd-yyyy`) / Download
-    - Launch
+    - Name add tags: web-server-mm-dd-yyyy (`web-server-10-24-2023`)
+    - Application and OS Images (AMI): Quick Start -> `Ubntu` -> Free tier eligible
+    - Instance type: `t2.micro`
+    - Create key pair: `kp-mm-dd-yyyy.pem` -> Download
+    - Network Settings: Create security group / SSH / HTTP
+    - Configure storage: 8 GiB gp2 free 
+    - Launch -> View all instances
 
 ***
 
