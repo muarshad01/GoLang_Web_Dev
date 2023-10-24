@@ -49,6 +49,33 @@
 
 ## 91. Implementing the Load Balancer
 
+### Create an AMI (Amazon Machine Image)
+* EC2 / Instances / right-click instance / create image
+    - image name: web-architecture-2019-10-31
+    - description: web server 2019 October 31
+    - no reboot: unchecked 
+    - allowing your instance to reboot gives a better image
+* create image
+
+### Launch a new instance of your AMI in a new availability zone (AZ)
+* what AZ is your current instance running in?
+    - EC2 / instances / look at the availability zone and make note of it
+* launch a new instance from your AMI
+    - EC2 / AMIs / right click / launch / next: configure
+* subnet: `<choose a different AZ>` / next: storage / next
+* tag
+    - value: web-server-0002
+* security group
+    - choose the "web-tier" security group we created
+* launch
+    - specify "key pair" we want the instance to use
+* launch instance
+
+### Add new EC2 instance to load balancer's target group
+* add the new instance to the target group
+* enter load balancer DNS into a browser to see your load balancer in action
+    - refresh your browser to see the switching between web-servers-sg
+
 ***
 
 ## 92. Connecting to your MySQL Server using MySQL Workbench
