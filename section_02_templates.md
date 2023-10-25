@@ -94,6 +94,64 @@ func init() {
 }
 ```
 
+* [template.Template](https://godoc.org/text/template#Template)
+```go
+template.Template
+```
+
+* [template.ParseFiles](https://godoc.org/text/template#ParseFiles)
+```go
+func ParseFiles(filenames ...string) (*Template, error)
+```
+
+* [template.ParseGlob](https://godoc.org/text/template#ParseGlob)
+```go
+func ParseGlob(pattern string) (*Template, error)
+```
+
+* [template.Parse](https://godoc.org/text/template#Template.Parse)
+```go
+func (t *Template) Parse(text string) (*Template, error)
+```
+
+* [template.ParseFiles](https://godoc.org/text/template#Template.ParseFiles)
+```go
+func (t *Template) ParseFiles(filenames ...string) (*Template, error)
+```
+
+* [template.ParseGlob](https://godoc.org/text/template#Template.ParseGlob)
+```go
+func (t *Template) ParseGlob(pattern string) (*Template, error)
+```
+
+# Executing templates
+
+* [template.Execute](https://godoc.org/text/template#Template.Execute)
+```go
+func (t *Template) Execute(wr io.Writer, data interface{}) error
+```
+
+* [template.ExecuteTemplate](https://godoc.org/text/template#Template.ExecuteTemplate)
+```go
+func (t *Template) ExecuteTemplate(wr io.Writer, name string, data interface{}) error
+```
+
+
+* [template.Must](https://godoc.org/text/template#Must)
+```go
+func Must(t *Template, err error) *Template
+```
+
+* [template.New](https://godoc.org/text/template#New)
+```go
+func New(name string) *Template
+```
+
+* [The init function](https://golang.org/doc/effective_go.html#init)
+```go
+func init()
+```
+
 ***
 
 ## 9. Passing data into templates
