@@ -69,7 +69,8 @@ io.Copy(nf, strings.NewReader(str))
 ```go
 import ("text/template")
 
-# ParseFiles vs ParseGlob	
+# ParseFiles vs ParseGlob
+-------------------------
 tpl, err := template.ParseFiles("one.gamo")
 tpl, err = tpl.ParseFiles("two.gmao", "three.gmao")         # We can add more files to `tpl` container
 
@@ -77,6 +78,7 @@ tpl, err := template.ParseGlob("templates/*")
 
 
 # Execute vs ExecuteTemplate
+----------------------------
 err = tpl.Execute(os.Stdout, nil)
 err = tpl.ExecuteTemplate(os.Stdout, "vespa.gmao", nil)
 ```
