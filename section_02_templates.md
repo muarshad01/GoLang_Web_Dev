@@ -38,14 +38,14 @@ name := "hello"
 ```
 
 ```go
-	nf, err := os.Create("index.html")
-	if err != nil {
-		log.Fatal("error creating file", err)
-	}
-	defer nf.Close()
+nf, err := os.Create("index.html")
+if err != nil {
+    log.Fatal("error creating file", err)
+}
+defer nf.Close()
 
-    // func Copy(dst Writer, src Reader) (written int64, err error)
-	io.Copy(nf, strings.NewReader(str))
+// func Copy(dst Writer, src Reader) (written int64, err error)
+io.Copy(nf, strings.NewReader(str))
 ```
 ***
 
