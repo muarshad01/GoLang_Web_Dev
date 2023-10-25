@@ -205,6 +205,19 @@ func init()
 
 ## 15. Nesting templates - modularizing your code
 
+* [nested templates documentation](https://godoc.org/text/template#hdr-Nested_template_definitions)
+
+* define 
+```go
+{{define "TemplateName"}}
+insert content here
+{{end}}
+```
+* use 
+```go
+{{template "TemplateName"}}
+```
+
 ***
 
 ## 16. Passing data in templates & composition
