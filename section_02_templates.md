@@ -44,6 +44,7 @@ name := "hello"
 	}
 	defer nf.Close()
 
+    // func Copy(dst Writer, src Reader) (written int64, err error)
 	io.Copy(nf, strings.NewReader(str))
 ```
 ***
