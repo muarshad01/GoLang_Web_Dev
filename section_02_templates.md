@@ -64,23 +64,24 @@ io.Copy(nf, strings.NewReader(str))
 </html>
 ```
 
-* `tpl` is like a container.
+* `tpl` is like a container, we can add one or more files
 
 ```go
 import ("text/template")
+```
 
-# ParseFiles vs ParseGlob
--------------------------
-tpl, err := template.ParseFiles("one.gamo")
-tpl, err = tpl.ParseFiles("two.gmao", "three.gmao")         # We can add more files to `tpl` container
+* `ParseFiles` vs `ParseGlob`
+```go
+tpl, err := template.ParseFiles("one.gohtml")
+tpl, err =       tpl.ParseFiles("two.gohtml", "three.gohtml")         # We can add more files to `tpl` container
 
 tpl, err := template.ParseGlob("templates/*")
+```
 
-
-# Execute vs ExecuteTemplate
-----------------------------
+* `Execute` vs `ExecuteTemplate`
+```go
 err = tpl.Execute(os.Stdout, nil)
-err = tpl.ExecuteTemplate(os.Stdout, "vespa.gmao", nil)
+err = tpl.ExecuteTemplate(os.Stdout, "vespa.gohtml", nil)
 ```
 
 
