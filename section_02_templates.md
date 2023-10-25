@@ -156,14 +156,37 @@ func init()
 
 ## 9. Passing data into templates
 
+```html
+{{.}}
+```
+
 ***
 
 ## 10. Variables in templates
 
+```html
+{{$wisdom := .}}
+<h1>The meaning of life: {{$wisdom}}</h1>
+```
 ***
 
 ## 11. Passing composite data structures into templates
 
+
+```html
+<ul>
+    {{range .}}
+        <li>{{.}}</li>
+    {{end}}
+</ul>
+```
+
+```html
+<ul>
+    {{range $index, $element .}}
+        <li>{{$index}} - {{$element}}</li>
+    {{end}}
+</ul>
 ***
 
 ## 12. Functions in templates
