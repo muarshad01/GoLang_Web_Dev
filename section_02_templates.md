@@ -187,6 +187,8 @@ func init()
         <li>{{$index}} - {{$element}}</li>
     {{end}}
 </ul>
+```
+
 ***
 
 ## 12. Functions in templates
