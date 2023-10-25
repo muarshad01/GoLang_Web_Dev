@@ -84,6 +84,15 @@ err = tpl.Execute(os.Stdout, nil)
 err = tpl.ExecuteTemplate(os.Stdout, "vespa.gohtml", nil)
 ```
 
+* To make our program more performant, we want to ensure that we parse our template only once
+
+```go
+var tpl *template.Template
+
+func init() {
+    tpl = template.Must(template.ParseGlob("templates/*"))
+}
+```
 
 ***
 
