@@ -5,7 +5,7 @@
 
 * Templates allow us to `Personalize Web Pages` for the users.
 
-* Template is like a Form letter:
+* Template is like a Form letter
 ```
 Dear {first-name},
 
@@ -13,17 +13,8 @@ Merry Christmas!
 
 We hope that this letter finds you well.
 
-Blah, blah, blah, blah, blah. Blah, blah. Blah blah blah. Blah.
-
-Happy Holidays!
-
-Love,
-The McLeods
+...
 ```
-
-- Passing function to templates
-- Passing Data; Range over Data
-- Nested templates
 
 ***
 
