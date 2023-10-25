@@ -56,6 +56,9 @@ $ GOOS=linux GOARCH=amd64 go build -o mybinary
 ```
 $ scp -i ~/.ssh/ky-10-24-2023.pem   mybinary    ubuntu@[Public IPv4 DNS]:~/
 $ ssh -i ~/.ssh/ky-10-24-2023.pem               ubuntu@[Public IPv4 DNS]
+
+$ sudo chmod 777 mybinary
+$ sudo ./mybinary
 ```
 
 ***
@@ -103,6 +106,14 @@ $ ssh -i ~/.ssh/ky-10-24-2023.pem               ubuntu@[Public IPv4 DNS]
 ***
 
 ## 94. Hands-on Solution
+
+```
+$ cd /Users/marshad/Desktop/golang-web-dev/033_aws-scaling/04_hands-on/02_solution
+$ go mod init 02_solution
+$ go mod tidy
+
+$ GOOS=linux GOARCH=amd64 go build -o mybinary
+```
 
 ***
 
