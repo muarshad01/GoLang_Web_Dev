@@ -151,9 +151,9 @@ $ sudo systemctl stop   `<filename>`.service
 
 * remove the tar file
     - rm -rf go1.7.4.linux-amd64.tar.gz
+```
 
 * make your go workspace
-
 ```
 $ cd ~
 $ mkdir goworkspace
