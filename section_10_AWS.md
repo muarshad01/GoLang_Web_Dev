@@ -199,10 +199,9 @@ export PATH=$PATH:$GOROOT/bin
 $ cd /Users/marshad/Desktop/golang-web-dev/030_sessions/08_expire-sessio
 ```
 
-```
-# Deploying our session example
 
-* change your port number from 8080 to 80
+* Deploying our session example
+    - change your port number from 8080 to 80
 
 * create your binary
 ```
