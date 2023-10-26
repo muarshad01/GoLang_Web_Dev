@@ -231,13 +231,15 @@ $ sudo ./[some-name]
 ```  
 - check it in a browser at [Public IPv4 address]
 
-# Persisting your application
+* Persisting your application
+    - To run our application after the terminal session has ended, we must do the following:
 
-  To run our application after the terminal session has ended, we must do the following:
+* Create a configuration file
+```  
+$ sudo nano /etc/systemd/system/`<filename>`.service
+```
 
-  1. Create a configuration file
-    - sudo nano /etc/systemd/system/```<filename>```.service
-
+```
   ---
   [Unit]
   Description=Go Server
@@ -284,4 +286,5 @@ $ sudo ./[some-name]
 ## 81. Terminating `AWS` services
 
 Instance state -> terminate
+
 ***
