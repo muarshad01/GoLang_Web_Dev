@@ -153,9 +153,11 @@ $ sudo systemctl stop   `<filename>`.service
     - rm -rf go1.7.4.linux-amd64.tar.gz
 
 * make your go workspace
+
 ```
+$ cd ~
 $ mkdir goworkspace
-cd gowoworkspace
+$ cd gowoworkspace
 $ mkdir bin pkg src
 $ cd ../
 ```
