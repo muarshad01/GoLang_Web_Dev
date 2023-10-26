@@ -193,6 +193,28 @@ func init()
 
 ## 12. Functions in templates
 
+[type FuncMap](https://pkg.go.dev/text/template#FuncMap)
+```go
+type FuncMap map[string]any
+```
+* FuncMap is the type of the map defining the mapping from names to functions. Each function must have either a single return value, or two return values of which the second has type error. In that case, if the second (error) return value evaluates to non-nil during execution, execution terminates and Execute returns that error.
+
+* `any` or `interface{}` is empty interface, i.e., an interface with no methods attached to it. Every type has at least no methods. Every type implements `interface{}`.
+
+
+```go
+var fm = template.FuncMap{
+	"uc": strings.ToUpper,
+	"ft": firstThree,
+}
+
+func init() {
+	tpl = template.Must(template.New("").Funcs(fm).ParseFiles("tpl.gohtml"))
+}
+```
+
+
+
 ***
 
 ## 13. Pipelines in templates
